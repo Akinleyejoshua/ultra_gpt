@@ -168,7 +168,7 @@ def get_callbacks(config: UltraGPTConfig, output_dir: str):
     callbacks = []
 
     # Model checkpointing
-    ckpt_path = os.path.join(output_dir, "checkpoints", "ultra_gpt_{epoch:03d}.weights.h5")
+    ckpt_path = os.path.join(output_dir, "checkpoints", "ultra_gpt_latest.weights.h5")
     callbacks.append(tf.keras.callbacks.ModelCheckpoint(
         filepath=ckpt_path,
         save_weights_only=True,
@@ -283,6 +283,8 @@ def main():
                         help="Disable mixed precision training")
     parser.add_argument("--multi-gpu", action="store_true",
                         help="Enable multi-GPU with MirroredStrategy")
+    parser.add_argument("--no-resume", action="store_true",
+                        help="Start training from scratch, ignoring previous checkpoints")
     args = parser.parse_args()
 
     # ── Select config preset ──────────────────────────────────────────
@@ -323,12 +325,26 @@ def main():
 
     # ── Build model ──────────────────────────────────────────────────
     model, optimizer = build_model_and_optimizer(config, strategy)
-    model.compile(optimizer=optimizer)
+    model.compile(
+        optimizer=optimizer,
+        metrics=[model.perplexity_tracker, model.accuracy_tracker]
+    )
 
     # Build model by running a dummy forward pass
     dummy_input = tf.zeros((1, config.block_size), dtype=tf.int32)
     _ = model(dummy_input, training=False)
     model.summary()
+
+    # Search for and load the latest checkpoint to resume training
+    if not args.no_resume:
+        checkpoint_file = os.path.join(args.output_dir, "checkpoints", "ultra_gpt_latest.weights.h5")
+        if os.path.exists(checkpoint_file):
+            print(f"\n[Training] Found checkpoint! Resuming training by loading weights from: {checkpoint_file}")
+            model.load_weights(checkpoint_file)
+        else:
+            print("\n[Training] No previous checkpoints found. Starting training from scratch.")
+    else:
+        print("\n[Training] Resume disabled via CLI flag (--no-resume). Starting training from scratch.")
 
     # ── Callbacks ────────────────────────────────────────────────────
     callbacks = get_callbacks(config, args.output_dir)
