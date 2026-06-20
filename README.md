@@ -33,7 +33,7 @@ ultra_gpt/
 ├── train.py                   # Training entry point
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # This file
-├── datasets/
+├── data_pipeline/
 │   ├── pipeline.py            # tf.data pipelines (text, TFRecord, HuggingFace)
 │   └── dataset.txt            # Your training data (place here)
 ├── models/
@@ -79,16 +79,16 @@ pip install -r requirements.txt
 **Option A — Raw text file** (simplest):
 ```bash
 # Place any .txt file in the datasets directory
-cp /path/to/your/corpus.txt datasets/dataset.txt
+cp /path/to/your/corpus.txt data_pipeline/dataset.txt
 ```
 
 **Option B — Pre-tokenize to TFRecords** (fastest throughput):
 ```python
-from datasets.pipeline import write_tfrecords
+from data_pipeline.pipeline import write_tfrecords
 
 write_tfrecords(
-    text_path="datasets/dataset.txt",
-    output_dir="datasets/tfrecords",
+    text_path="data_pipeline/dataset.txt",
+    output_dir="data_pipeline/tfrecords",
     block_size=512,
     shards=16,
 )
@@ -97,7 +97,7 @@ write_tfrecords(
 **Option C — HuggingFace datasets** (no download required with streaming):
 ```python
 # Streams directly from the Hub — no local storage needed
-from datasets.pipeline import create_dataset_from_hf
+from data_pipeline.pipeline import create_dataset_from_hf
 
 dataset, tokenizer = create_dataset_from_hf(
     "openwebtext",          # or "wikitext", "allenai/c4", etc.
@@ -111,7 +111,7 @@ dataset, tokenizer = create_dataset_from_hf(
 
 ```bash
 # Toy model on a text file (quick smoke test)
-python train.py --preset toy --source text --text-path datasets/dataset.txt
+python train.py --preset toy --source text --text-path data_pipeline/dataset.txt
 
 # Toy model on HuggingFace dataset (streaming)
 python train.py --preset toy --source hf --hf-dataset openwebtext
@@ -122,7 +122,7 @@ python train.py --preset small --source hf \
     --hf-streaming
 
 # Train on pre-tokenized TFRecords
-python train.py --preset small --source tfrecord --tfrecord-dir datasets/tfrecords
+python train.py --preset small --source tfrecord --tfrecord-dir data_pipeline/tfrecords
 
 # Medium (1.3B) model with multi-GPU
 python train.py --preset medium --source hf \
@@ -149,7 +149,7 @@ sys.path.insert(0, ".")
 
 from config import toy_config
 from models.transformer import UltraGPT
-from datasets.pipeline import TiktokenWrapper
+from data_pipeline.pipeline import TiktokenWrapper
 from inference.sampler import UltraGPTSampler
 
 # Load model
@@ -267,8 +267,8 @@ python train.py [OPTIONS]
 Options:
   --preset {toy,small,medium}   Model size preset (default: toy)
   --source {text,tfrecord,hf}   Data source type (default: text)
-  --text-path PATH              Raw text file path (default: datasets/dataset.txt)
-  --tfrecord-dir DIR            TFRecord directory (default: datasets/tfrecords)
+  --text-path PATH              Raw text file path (default: data_pipeline/dataset.txt)
+  --tfrecord-dir DIR            TFRecord directory (default: data_pipeline/tfrecords)
   --hf-dataset NAME             HuggingFace dataset name (default: openwebtext)
   --hf-config NAME              HuggingFace dataset config/subset
   --hf-text-col NAME            Text column name (default: text)

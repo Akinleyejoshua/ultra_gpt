@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import UltraGPTConfig, toy_config, small_config, medium_config
 from models.transformer import UltraGPT
-from datasets.pipeline import (
+from data_pipeline.pipeline import (
     create_dataset_from_text,
     create_dataset_from_tfrecords,
     create_dataset_from_hf,
@@ -168,7 +168,7 @@ def get_callbacks(config: UltraGPTConfig, output_dir: str):
     callbacks = []
 
     # Model checkpointing
-    ckpt_path = os.path.join(output_dir, "checkpoints", "ultra_gpt_{epoch:03d}")
+    ckpt_path = os.path.join(output_dir, "checkpoints", "ultra_gpt_{epoch:03d}.weights.h5")
     callbacks.append(tf.keras.callbacks.ModelCheckpoint(
         filepath=ckpt_path,
         save_weights_only=True,
@@ -212,7 +212,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
         Tuple of (dataset, tokenizer_or_None).
     """
     if source == "text":
-        text_path = kwargs.get("text_path", "datasets/dataset.txt")
+        text_path = kwargs.get("text_path", "data_pipeline/dataset.txt")
         return create_dataset_from_text(
             text_path=text_path,
             block_size=config.block_size,
@@ -221,7 +221,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
         )
 
     elif source == "tfrecord":
-        tfrecord_dir = kwargs.get("tfrecord_dir", "datasets/tfrecords")
+        tfrecord_dir = kwargs.get("tfrecord_dir", "data_pipeline/tfrecords")
         dataset = create_dataset_from_tfrecords(
             tfrecord_dir=tfrecord_dir,
             block_size=config.block_size,
@@ -261,9 +261,9 @@ def main():
                         default="toy", help="Model size preset")
     parser.add_argument("--source", choices=["text", "tfrecord", "hf"],
                         default="text", help="Data source type")
-    parser.add_argument("--text-path", default="datasets/dataset.txt",
+    parser.add_argument("--text-path", default="data_pipeline/dataset.txt",
                         help="Path to raw text file (for --source text)")
-    parser.add_argument("--tfrecord-dir", default="datasets/tfrecords",
+    parser.add_argument("--tfrecord-dir", default="data_pipeline/tfrecords",
                         help="TFRecord directory (for --source tfrecord)")
     parser.add_argument("--hf-dataset", default="openwebtext",
                         help="HuggingFace dataset name (for --source hf)")

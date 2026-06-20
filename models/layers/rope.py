@@ -97,6 +97,8 @@ def apply_rope(x, cos, sin):
     """
     # Split head_dim into pairs
     x_float = tf.cast(x, tf.float32)
+    cos_float = tf.cast(cos, tf.float32)
+    sin_float = tf.cast(sin, tf.float32)
     d = tf.shape(x_float)[-1]
     half_d = d // 2
 
@@ -104,13 +106,13 @@ def apply_rope(x, cos, sin):
     x1 = x_float[..., half_d:]
 
     # Broadcast cos/sin: (seq, half_d) → (1, 1, seq, half_d)
-    cos = cos[tf.newaxis, tf.newaxis, :, :]
-    sin = sin[tf.newaxis, tf.newaxis, :, :]
+    cos_broadcast = cos_float[tf.newaxis, tf.newaxis, :, :]
+    sin_broadcast = sin_float[tf.newaxis, tf.newaxis, :, :]
 
     # Apply rotation
     rotated = tf.concat([
-        x0 * cos - x1 * sin,
-        x0 * sin + x1 * cos,
+        x0 * cos_broadcast - x1 * sin_broadcast,
+        x0 * sin_broadcast + x1 * cos_broadcast,
     ], axis=-1)
 
     return tf.cast(rotated, x.dtype)

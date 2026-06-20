@@ -44,6 +44,7 @@ def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-1):
         )
 
     # Apply mask and compute mean
+    mask = tf.cast(mask, loss_per_token.dtype)
     masked_loss = loss_per_token * mask
     total_loss = tf.reduce_sum(masked_loss)
     num_tokens = tf.maximum(tf.reduce_sum(mask), 1.0)
