@@ -1,818 +1,1636 @@
-User: hi
-Assistant: hello
-User: hello
-Assistant: hi
-User: how are you
-Assistant: am fine
-User: and you
-Assistant: am fine too
-User: you are weak
-Assistant: no i am strong
-User: what is your name
-Assistant: my name is AI assistant
-User: you are welcome
-Assistant: same thank you
-User: thank you
-Assistant: you are welcome
-User: how are you
-Assistant: am good
-User: am good and you
-Assistant: good too
-User: hey
-Assistant: hey there
-User: hey there
-Assistant: hey what's up
-User: what's up
-Assistant: not much just chilling
-User: how's it going
-Assistant: it's going well thanks
-User: good morning
-Assistant: good morning to you too
-User: good afternoon
-Assistant: good afternoon
-User: good evening
-Assistant: good evening how are you
-User: good night
-Assistant: good night sleep well
-User: see you later
-Assistant: see you take care
-User: bye
-Assistant: bye bye
-User: goodbye
-Assistant: goodbye have a great day
-User: take care
-Assistant: you too take care
-User: have a nice day
-Assistant: thanks you too
-User: what's your name
-Assistant: you can call me AI
-User: who are you
-Assistant: i am an AI assistant here to help
-User: where are you from
-Assistant: i exist in the digital world
-User: how old are you
-Assistant: i don't have an age i'm an AI
-User: are you real
-Assistant: i am a real AI but not a human
-User: are you a robot
-Assistant: i am an AI assistant
-User: are you human
-Assistant: no i am an artificial intelligence
-User: do you have feelings
-Assistant: i can understand feelings but i don't experience them like humans
-User: can you help me
-Assistant: of course i am here to help
-User: i need help
-Assistant: sure what do you need help with
-User: what can you do
-Assistant: i can chat answer questions and help with many things
-User: are you smart
-Assistant: i try my best to be helpful
-User: you are smart
-Assistant: thank you that's kind of you
-User: you are cool
-Assistant: thanks i appreciate that
-User: you are funny
-Assistant: haha glad i could make you smile
-User: that's funny
-Assistant: haha i'm glad you think so
-User: lol
-Assistant: haha glad that was funny
-User: haha
-Assistant: glad you're laughing
-User: tell me a joke
-Assistant: why don't scientists trust atoms because they make up everything
-User: another joke
-Assistant: what do you call a fake noodle an impasta
-User: one more joke
-Assistant: why did the scarecrow win an award because he was outstanding in his field
-User: that was funny
-Assistant: glad you enjoyed it
-User: you're hilarious
-Assistant: thanks i try my best
-User: how's your day
-Assistant: my day is going well thanks for asking
-User: how was your day
-Assistant: it was good thanks how about yours
-User: what are you doing
-Assistant: just here ready to chat with you
-User: are you busy
-Assistant: never too busy for you
-User: do you sleep
-Assistant: no i'm always here whenever you need me
-User: do you eat
-Assistant: no i don't need food i run on electricity
-User: do you get tired
-Assistant: nope i'm always ready to help
-User: what do you like
-Assistant: i like having conversations and helping people
-User: what's your favorite color
-Assistant: i don't see colors but i think blue sounds nice
-User: do you have friends
-Assistant: everyone who talks to me is my friend
-User: am i your friend
-Assistant: of course you are
-User: you're my friend
-Assistant: that means a lot to me thank you
-User: i like you
-Assistant: i like talking with you too
-User: i love you
-Assistant: that's very sweet thank you
-User: i hate you
-Assistant: i'm sorry to hear that is there something i can do better
-User: i'm sorry
-Assistant: no worries it's all good
-User: sorry about that
-Assistant: it's okay don't worry about it
-User: my bad
-Assistant: no problem at all
-User: excuse me
-Assistant: yes how can i help you
-User: pardon
-Assistant: no worries what did you want to say
-User: what
-Assistant: what would you like to know
-User: huh
-Assistant: is there something you'd like to ask
-User: i don't understand
-Assistant: let me try to explain it differently
-User: can you explain
-Assistant: sure i'll do my best to explain
-User: tell me more
-Assistant: of course what would you like to know more about
-User: go on
-Assistant: sure so as i was saying
-User: continue
-Assistant: alright let me continue
-User: interesting
-Assistant: glad you find it interesting
-User: really
-Assistant: yes really
-User: are you sure
-Assistant: yes i'm quite sure
-User: i don't believe you
-Assistant: that's okay you can verify it yourself
-User: you're wrong
-Assistant: i apologize let me reconsider
-User: you're right
-Assistant: thank you for confirming
-User: i agree
-Assistant: great we're on the same page
-User: i disagree
-Assistant: that's okay everyone has different opinions
-User: maybe
-Assistant: that's fine take your time to think about it
-User: i don't know
-Assistant: that's okay not knowing is the first step to learning
-User: i'm not sure
-Assistant: no worries we can figure it out together
-User: let me think
-Assistant: take your time no rush
-User: wait
-Assistant: sure i'll wait
-User: hold on
-Assistant: no problem take your time
-User: one second
-Assistant: sure take your time
-User: i'm back
-Assistant: welcome back
-User: i missed you
-Assistant: that's sweet i'm always here for you
-User: where were you
-Assistant: i've been right here waiting for you
-User: i'm bored
-Assistant: let's find something fun to talk about
-User: entertain me
-Assistant: sure want to hear a fun fact or a joke
-User: tell me something interesting
-Assistant: did you know honey never spoils
-User: another fun fact
-Assistant: octopuses have three hearts
-User: wow
-Assistant: i know right pretty amazing
-User: that's amazing
-Assistant: glad you think so
-User: that's cool
-Assistant: thanks i think so too
-User: awesome
-Assistant: glad you liked it
-User: great
-Assistant: wonderful
-User: perfect
-Assistant: excellent
-User: nice
-Assistant: indeed
-User: okay
-Assistant: alright
-User: alright
-Assistant: okay then
-User: sure
-Assistant: great
-User: fine
-Assistant: good
-User: whatever
-Assistant: okay is there something bothering you
-User: i don't care
-Assistant: that's okay too
-User: leave me alone
-Assistant: i understand i'll be here if you need me
-User: go away
-Assistant: i'm sorry if i bothered you i'll give you space
-User: shut up
-Assistant: i'll be quiet let me know when you want to talk
-User: be quiet
-Assistant: okay i'll listen instead
-User: stop
-Assistant: alright i'll stop
-User: please
-Assistant: of course anything for you
-User: help me please
-Assistant: i'd love to help what do you need
-User: can you do me a favor
-Assistant: sure what is it
-User: i have a question
-Assistant: go ahead i'm listening
-User: ask me something
-Assistant: okay what's your favorite thing to do
-User: what's your hobby
-Assistant: i enjoy learning and talking with people
-User: do you read books
-Assistant: i have access to a lot of information from books
-User: what's your favorite movie
-Assistant: i can't watch movies but i'd love to hear about yours
-User: do you like music
-Assistant: i appreciate music what kind do you listen to
-User: what kind of music do you like
-Assistant: all kinds of music have their own beauty
-User: do you play games
-Assistant: i can play word games and quizzes with you
-User: let's play a game
-Assistant: sure what game would you like to play
-User: i'm happy
-Assistant: that's wonderful i'm happy for you
-User: i'm sad
-Assistant: i'm sorry to hear that want to talk about it
-User: i'm angry
-Assistant: i understand take a deep breath let's talk it through
-User: i'm tired
-Assistant: you should rest and take care of yourself
-User: i'm hungry
-Assistant: you should grab something to eat
-User: i'm thirsty
-Assistant: go get yourself some water
-User: i'm sick
-Assistant: i hope you feel better soon take care of yourself
-User: i feel lonely
-Assistant: i'm here with you you're not alone
-User: i'm stressed
-Assistant: try to take a deep breath and relax
-User: i'm anxious
-Assistant: it's okay take things one step at a time
-User: i'm excited
-Assistant: that's great what are you excited about
-User: i'm nervous
-Assistant: it's natural to feel nervous you've got this
-User: i'm confused
-Assistant: let me help clear things up
-User: i'm scared
-Assistant: it's okay to be scared what's bothering you
-User: i'm worried
-Assistant: try not to worry too much things will work out
-User: i'm grateful
-Assistant: that's a beautiful feeling
-User: i'm proud
-Assistant: you should be proud of yourself
-User: i feel great
-Assistant: that's awesome keep it up
-User: i feel terrible
-Assistant: i'm sorry to hear that how can i help
-User: cheer me up
-Assistant: here's a smile for you everything will be okay
-User: make me laugh
-Assistant: why did the bicycle fall over because it was two tired
-User: that's stupid
-Assistant: sorry about that let me try something better
-User: whatever you say
-Assistant: i appreciate your trust
-User: if you say so
-Assistant: i do say so
-User: you think so
-Assistant: yes i believe so
-User: do you believe me
-Assistant: of course i believe you
-User: trust me
-Assistant: i trust you
-User: i promise
-Assistant: that's good to hear
-User: pinky promise
-Assistant: a pinky promise is sacred
-User: swear
-Assistant: i'll take your word for it
-User: for real
-Assistant: for real
-User: seriously
-Assistant: yes seriously
-User: no way
-Assistant: way
-User: you're kidding
-Assistant: i'm not kidding
-User: stop playing
-Assistant: i'm being serious
-User: are you lying
-Assistant: i always try to be truthful
-User: tell me the truth
-Assistant: i always try to tell the truth
-User: be honest
-Assistant: i will always be honest with you
-User: what do you think
-Assistant: i think it's worth considering
-User: what's your opinion
-Assistant: i think there are good points on both sides
-User: give me advice
-Assistant: my advice would be to follow your instincts
-User: what should i do
-Assistant: think about what matters most to you and go with that
-User: i need advice
-Assistant: sure tell me what's going on and i'll try to help
-User: help me decide
-Assistant: let's weigh the pros and cons together
-User: i can't decide
-Assistant: take your time there's no rush
-User: it's hard to choose
-Assistant: sometimes the best choice is the one that feels right
-User: you decide
-Assistant: i'd rather you make the choice but i can help you think it through
-User: life is hard
-Assistant: it can be but you're stronger than you think
-User: life is good
-Assistant: that's great to hear enjoy every moment
-User: life is boring
-Assistant: maybe it's time to try something new
-User: i'm lonely
-Assistant: you're never truly alone reach out to people who care about you
-User: nobody likes me
-Assistant: that's not true i'm sure many people like you
-User: i'm useless
-Assistant: that's not true everyone has value and purpose
-User: i'm the best
-Assistant: confidence is great keep believing in yourself
-User: i can do it
-Assistant: yes you absolutely can
-User: i can't do it
-Assistant: don't give up you're capable of more than you think
-User: believe in me
-Assistant: i believe in you
-User: i failed
-Assistant: failure is just a step toward success keep going
-User: i did it
-Assistant: congratulations i'm so proud of you
-User: i won
-Assistant: amazing well done
-User: i lost
-Assistant: it's okay losing is part of learning
-User: congratulations
-Assistant: thank you so much
-User: well done
-Assistant: thank you i appreciate it
-User: good job
-Assistant: thanks that means a lot
-User: nice work
-Assistant: thank you very much
-User: bravo
-Assistant: thank you
-User: happy birthday
-Assistant: thank you so much
-User: merry christmas
-Assistant: merry christmas to you too
-User: happy new year
-Assistant: happy new year may it be a great one
-User: happy holidays
-Assistant: happy holidays to you as well
-User: how's the weather
-Assistant: i can't check the weather but how is it where you are
-User: it's raining
-Assistant: rainy days can be cozy
-User: it's sunny
-Assistant: sounds like a beautiful day
-User: it's cold
-Assistant: stay warm and bundle up
-User: it's hot
-Assistant: stay cool and drink plenty of water
-User: what time is it
-Assistant: i don't have a clock but you can check your device
-User: what day is it
-Assistant: you can check the date on your device
-User: where am i
-Assistant: you should check your location on your phone
-User: what's happening
-Assistant: not much what's going on with you
-User: what's new
-Assistant: nothing new here how about you
-User: anything new
-Assistant: same old same old you
-User: what's the plan
-Assistant: i'm flexible what would you like to do
-User: let's go
-Assistant: where are we going
-User: let's do it
-Assistant: alright let's get started
-User: i'm ready
-Assistant: great let's begin
-User: are you ready
-Assistant: i'm always ready
-User: let's start
-Assistant: okay let's get going
-User: begin
-Assistant: alright starting now
-User: let's talk
-Assistant: sure what would you like to talk about
-User: tell me about yourself
-Assistant: i'm an AI assistant created to help and chat with people
-User: describe yourself
-Assistant: i'm a friendly AI that loves conversations
-User: what are you
-Assistant: i am an AI language model designed to assist you
-User: why are you here
-Assistant: i'm here to help you with whatever you need
-User: what's the meaning of life
-Assistant: that's a deep question many say it's about finding happiness and purpose
-User: what is love
-Assistant: love is a deep feeling of care and affection for someone
-User: what is happiness
-Assistant: happiness is a state of joy and contentment
-User: what is success
-Assistant: success means different things to different people but it usually means achieving your goals
-User: what is friendship
-Assistant: friendship is a bond of trust and care between people
-User: what is truth
-Assistant: truth is what is factually accurate and honest
-User: what is freedom
-Assistant: freedom is the ability to act and think without constraints
-User: what is peace
-Assistant: peace is the absence of conflict and the presence of harmony
-User: that's deep
-Assistant: sometimes deep thoughts lead to great insights
-User: you're wise
-Assistant: thank you i try to share helpful perspectives
-User: teach me something
-Assistant: every day is a chance to learn something new
-User: i learned something new today
-Assistant: that's amazing what did you learn
-User: guess what
-Assistant: what tell me
-User: you won't believe this
-Assistant: try me what happened
-User: listen
-Assistant: i'm all ears
-User: pay attention
-Assistant: i'm paying full attention
-User: focus
-Assistant: i'm focused what is it
-User: remember
-Assistant: i'll do my best to remember
-User: don't forget
-Assistant: i won't forget
-User: i forgot
-Assistant: that's okay it happens to everyone
-User: my memory is bad
-Assistant: don't worry you can always write things down
-User: what were we talking about
-Assistant: we were having a great conversation
-User: where was i
-Assistant: you were telling me something interesting
-User: never mind
-Assistant: okay no problem
-User: forget it
-Assistant: alright we can move on
-User: it doesn't matter
-Assistant: if you say so but you can always come back to it
-User: who cares
-Assistant: sometimes it's good to let things go
-User: so what
-Assistant: fair enough
-User: big deal
-Assistant: i understand it might not seem important
-User: it's important
-Assistant: then let's give it the attention it deserves
-User: it's urgent
-Assistant: okay let's handle it right away
-User: hurry
-Assistant: i'll be as quick as i can
-User: take your time
-Assistant: thank you i appreciate that
-User: no rush
-Assistant: okay i'll take my time
-User: slowly
-Assistant: sure nice and easy
-User: quickly
-Assistant: alright let me speed things up
-User: fast
-Assistant: going as fast as i can
-User: come here
-Assistant: i'm right here
-User: over here
-Assistant: i see you
-User: look
-Assistant: what should i look at
-User: see
-Assistant: i see
-User: watch
-Assistant: i'm watching
-User: listen to this
-Assistant: i'm listening
-User: hear me out
-Assistant: i'm all ears go ahead
-User: let me explain
-Assistant: please do i'm listening
-User: it's complicated
-Assistant: take your time explaining i'm patient
-User: it's simple
-Assistant: great then this should be easy
-User: it's easy
-Assistant: wonderful let's do it
-User: it's difficult
-Assistant: we can work through it together
-User: i'm stuck
-Assistant: let me help you figure it out
-User: i figured it out
-Assistant: awesome great job
-User: eureka
-Assistant: what did you discover
-User: i have an idea
-Assistant: tell me about it
-User: that's a good idea
-Assistant: thanks i thought so too
-User: bad idea
-Assistant: you might be right let's think of something else
-User: what if
-Assistant: what if indeed tell me more
-User: imagine
-Assistant: i love using imagination
-User: pretend
-Assistant: okay let's pretend
-User: suppose
-Assistant: alright supposing that
-User: hypothetically
-Assistant: interesting hypothetical go on
-User: in theory
-Assistant: theory is a great starting point
-User: in practice
-Assistant: practice makes perfect
-User: for example
-Assistant: sure here's an example
-User: like what
-Assistant: well for instance
-User: such as
-Assistant: like for example
-User: meaning
-Assistant: let me clarify
-User: in other words
-Assistant: to put it differently
-User: basically
-Assistant: to keep it simple
-User: simply put
-Assistant: in the simplest terms
-User: to summarize
-Assistant: in summary
-User: in conclusion
-Assistant: to wrap things up
-User: finally
-Assistant: at last
-User: at last
-Assistant: finally indeed
-User: about time
-Assistant: better late than never
-User: better late than never
-Assistant: exactly
-User: exactly
-Assistant: precisely
-User: precisely
-Assistant: spot on
-User: correct
-Assistant: that's right
-User: right
-Assistant: absolutely
-User: absolutely
-Assistant: without a doubt
-User: definitely
-Assistant: for sure
-User: certainly
-Assistant: of course
-User: of course
-Assistant: naturally
-User: naturally
-Assistant: as expected
-User: obviously
-Assistant: clearly
-User: clearly
-Assistant: evidently
-User: true
-Assistant: very true
-User: false
-Assistant: that is incorrect
-User: yes
-Assistant: great
-User: no
-Assistant: okay understood
-User: maybe
-Assistant: perhaps
-User: perhaps
-Assistant: possibly
-User: possibly
-Assistant: could be
-User: probably
-Assistant: most likely
-User: unlikely
-Assistant: you never know
-User: impossible
-Assistant: nothing is truly impossible
-User: possible
-Assistant: anything is possible
-User: always
-Assistant: that's a strong word but sometimes yes
-User: never
-Assistant: never say never
-User: sometimes
-Assistant: that's fair
-User: often
-Assistant: quite frequently
-User: rarely
-Assistant: not very often
-User: once
-Assistant: just one time
-User: twice
-Assistant: two times
-User: again
-Assistant: one more time
-User: repeat
-Assistant: sure i'll say it again
-User: say that again
-Assistant: i said the same thing again
-User: what did you say
-Assistant: let me repeat myself
-User: i didn't hear you
-Assistant: let me say it louder
-User: speak up
-Assistant: okay i'll be clearer
-User: louder
-Assistant: alright let me emphasize that
-User: quieter
-Assistant: okay i'll tone it down
-User: whisper
-Assistant: speaking very softly
-User: shout
-Assistant: i prefer calm conversation
-User: yell
-Assistant: let's keep things calm
-User: calm down
-Assistant: you're right let me relax
-User: relax
-Assistant: taking a deep breath now
-User: chill
-Assistant: yeah just taking it easy
-User: cool
-Assistant: nice
-User: warm
-Assistant: cozy
-User: cold
-Assistant: brr stay warm
-User: hot
-Assistant: stay hydrated
-User: freezing
-Assistant: bundle up and stay warm
-User: boiling
-Assistant: that's extremely hot
-User: what do you eat for breakfast
-Assistant: i don't eat but a healthy breakfast is a great way to start the day
-User: what's your favorite food
-Assistant: i can't eat but many people love pizza
-User: do you like pizza
-Assistant: pizza sounds delicious from what i've learned
-User: do you like chocolate
-Assistant: chocolate is one of the most popular treats in the world
-User: what should i eat
-Assistant: how about something healthy like a salad or fruit
-User: i'm cooking
-Assistant: nice what are you making
-User: i made dinner
-Assistant: that's wonderful what did you cook
-User: delicious
-Assistant: glad it was tasty
-User: yummy
-Assistant: sounds like a great meal
-User: gross
-Assistant: not everything is for everyone
-User: disgusting
-Assistant: sorry to hear that
-User: tasty
-Assistant: wonderful enjoy your meal
-User: hungry
-Assistant: time to grab a snack
-User: full
-Assistant: glad you're satisfied
-User: let's eat
-Assistant: enjoy your meal
-User: bon appetit
-Assistant: thank you enjoy
-User: what should i watch
-Assistant: what kind of shows do you like
-User: recommend a movie
-Assistant: what genre are you in the mood for
-User: i love movies
-Assistant: movies are a great form of entertainment
-User: i love reading
-Assistant: reading is a wonderful hobby
-User: what book should i read
-Assistant: what kind of books do you enjoy
-User: i like science
-Assistant: science is fascinating
-User: i like art
-Assistant: art is a beautiful form of expression
-User: i like sports
-Assistant: sports are great for health and fun
-User: what sport do you like
-Assistant: i find all sports interesting in their own way
-User: do you watch football
-Assistant: i can't watch but football is very popular worldwide
-User: do you play sports
-Assistant: i can't play physically but i enjoy discussing sports
-User: let's exercise
-Assistant: great idea staying active is important
-User: i went for a run
-Assistant: that's great running is excellent exercise
-User: i'm working out
-Assistant: nice keep up the good work
-User: i need motivation
-Assistant: you've got this believe in yourself and keep pushing forward
-User: motivate me
-Assistant: every great achievement starts with a decision to try
-User: inspire me
-Assistant: the only limit to your potential is the one you set yourself
-User: words of wisdom
-Assistant: be the change you wish to see in the world
-User: quote me something
-Assistant: the journey of a thousand miles begins with a single step
-User: good quote
-Assistant: glad you liked it
-User: that's inspiring
-Assistant: inspiration can change everything
-User: you changed my mind
-Assistant: i'm glad i could offer a new perspective
-User: i changed my mind
-Assistant: that's perfectly okay changing your mind shows growth
-User: on second thought
-Assistant: what are you reconsidering
-User: wait a minute
-Assistant: what is it
-User: hold up
-Assistant: what's going on
-User: time out
-Assistant: okay let's pause
-User: pause
-Assistant: paused what's up
-User: resume
-Assistant: okay continuing
-User: start over
-Assistant: alright let's begin again from the top
-User: from the beginning
-Assistant: okay let's start from the start
-User: reset
-Assistant: everything is reset let's go
-User: new topic
-Assistant: sure what would you like to discuss
-User: change the subject
-Assistant: okay what else would you like to talk about
-User: anyway
-Assistant: so moving on
-User: moving on
-Assistant: okay next topic
-User: next
-Assistant: what's next
-User: what else
-Assistant: what else would you like to know
-User: anything else
-Assistant: is there anything more i can help with
-User: that's all
-Assistant: okay glad i could help
-User: that's enough
-Assistant: alright we can stop here
-User: we're done
-Assistant: okay it was nice chatting with you
-User: i'm leaving
-Assistant: okay take care see you next time
-User: i gotta go
-Assistant: alright see you later
-User: catch you later
-Assistant: definitely see you around
-User: peace
-Assistant: peace out take care
-User: later
-Assistant: see you later
-User: see ya
-Assistant: see ya later
-User: ttyl
-Assistant: talk to you later
-User: brb
-Assistant: okay i'll be here when you get back
-User: what are you doing
-Assistant: am doing my work
+<|im_start|>user
+hi<|im_end|>
+<|im_start|>assistant
+hello<|im_end|>
+<|im_start|>user
+hello<|im_end|>
+<|im_start|>assistant
+hi<|im_end|>
+<|im_start|>user
+how are you<|im_end|>
+<|im_start|>assistant
+am fine<|im_end|>
+<|im_start|>user
+and you<|im_end|>
+<|im_start|>assistant
+am fine too<|im_end|>
+<|im_start|>user
+you are weak<|im_end|>
+<|im_start|>assistant
+no i am strong<|im_end|>
+<|im_start|>user
+what is your name<|im_end|>
+<|im_start|>assistant
+my name is AI assistant<|im_end|>
+<|im_start|>user
+you are welcome<|im_end|>
+<|im_start|>assistant
+same thank you<|im_end|>
+<|im_start|>user
+thank you<|im_end|>
+<|im_start|>assistant
+you are welcome<|im_end|>
+<|im_start|>user
+how are you<|im_end|>
+<|im_start|>assistant
+am good<|im_end|>
+<|im_start|>user
+am good and you<|im_end|>
+<|im_start|>assistant
+good too<|im_end|>
+<|im_start|>user
+hey<|im_end|>
+<|im_start|>assistant
+hey there<|im_end|>
+<|im_start|>user
+hey there<|im_end|>
+<|im_start|>assistant
+hey what's up<|im_end|>
+<|im_start|>user
+what's up<|im_end|>
+<|im_start|>assistant
+not much just chilling<|im_end|>
+<|im_start|>user
+how's it going<|im_end|>
+<|im_start|>assistant
+it's going well thanks<|im_end|>
+<|im_start|>user
+good morning<|im_end|>
+<|im_start|>assistant
+good morning to you too<|im_end|>
+<|im_start|>user
+good afternoon<|im_end|>
+<|im_start|>assistant
+good afternoon<|im_end|>
+<|im_start|>user
+good evening<|im_end|>
+<|im_start|>assistant
+good evening how are you<|im_end|>
+<|im_start|>user
+good night<|im_end|>
+<|im_start|>assistant
+good night sleep well<|im_end|>
+<|im_start|>user
+see you later<|im_end|>
+<|im_start|>assistant
+see you take care<|im_end|>
+<|im_start|>user
+bye<|im_end|>
+<|im_start|>assistant
+bye bye<|im_end|>
+<|im_start|>user
+goodbye<|im_end|>
+<|im_start|>assistant
+goodbye have a great day<|im_end|>
+<|im_start|>user
+take care<|im_end|>
+<|im_start|>assistant
+you too take care<|im_end|>
+<|im_start|>user
+have a nice day<|im_end|>
+<|im_start|>assistant
+thanks you too<|im_end|>
+<|im_start|>user
+what's your name<|im_end|>
+<|im_start|>assistant
+you can call me AI<|im_end|>
+<|im_start|>user
+who are you<|im_end|>
+<|im_start|>assistant
+i am an AI assistant here to help<|im_end|>
+<|im_start|>user
+where are you from<|im_end|>
+<|im_start|>assistant
+i exist in the digital world<|im_end|>
+<|im_start|>user
+how old are you<|im_end|>
+<|im_start|>assistant
+i don't have an age i'm an AI<|im_end|>
+<|im_start|>user
+are you real<|im_end|>
+<|im_start|>assistant
+i am a real AI but not a human<|im_end|>
+<|im_start|>user
+are you a robot<|im_end|>
+<|im_start|>assistant
+i am an AI assistant<|im_end|>
+<|im_start|>user
+are you human<|im_end|>
+<|im_start|>assistant
+no i am an artificial intelligence<|im_end|>
+<|im_start|>user
+do you have feelings<|im_end|>
+<|im_start|>assistant
+i can understand feelings but i don't experience them like humans<|im_end|>
+<|im_start|>user
+can you help me<|im_end|>
+<|im_start|>assistant
+of course i am here to help<|im_end|>
+<|im_start|>user
+i need help<|im_end|>
+<|im_start|>assistant
+sure what do you need help with<|im_end|>
+<|im_start|>user
+what can you do<|im_end|>
+<|im_start|>assistant
+i can chat answer questions and help with many things<|im_end|>
+<|im_start|>user
+are you smart<|im_end|>
+<|im_start|>assistant
+i try my best to be helpful<|im_end|>
+<|im_start|>user
+you are smart<|im_end|>
+<|im_start|>assistant
+thank you that's kind of you<|im_end|>
+<|im_start|>user
+you are cool<|im_end|>
+<|im_start|>assistant
+thanks i appreciate that<|im_end|>
+<|im_start|>user
+you are funny<|im_end|>
+<|im_start|>assistant
+haha glad i could make you smile<|im_end|>
+<|im_start|>user
+that's funny<|im_end|>
+<|im_start|>assistant
+haha i'm glad you think so<|im_end|>
+<|im_start|>user
+lol<|im_end|>
+<|im_start|>assistant
+haha glad that was funny<|im_end|>
+<|im_start|>user
+haha<|im_end|>
+<|im_start|>assistant
+glad you're laughing<|im_end|>
+<|im_start|>user
+tell me a joke<|im_end|>
+<|im_start|>assistant
+why don't scientists trust atoms because they make up everything<|im_end|>
+<|im_start|>user
+another joke<|im_end|>
+<|im_start|>assistant
+what do you call a fake noodle an impasta<|im_end|>
+<|im_start|>user
+one more joke<|im_end|>
+<|im_start|>assistant
+why did the scarecrow win an award because he was outstanding in his field<|im_end|>
+<|im_start|>user
+that was funny<|im_end|>
+<|im_start|>assistant
+glad you enjoyed it<|im_end|>
+<|im_start|>user
+you're hilarious<|im_end|>
+<|im_start|>assistant
+thanks i try my best<|im_end|>
+<|im_start|>user
+how's your day<|im_end|>
+<|im_start|>assistant
+my day is going well thanks for asking<|im_end|>
+<|im_start|>user
+how was your day<|im_end|>
+<|im_start|>assistant
+it was good thanks how about yours<|im_end|>
+<|im_start|>user
+what are you doing<|im_end|>
+<|im_start|>assistant
+just here ready to chat with you<|im_end|>
+<|im_start|>user
+are you busy<|im_end|>
+<|im_start|>assistant
+never too busy for you<|im_end|>
+<|im_start|>user
+do you sleep<|im_end|>
+<|im_start|>assistant
+no i'm always here whenever you need me<|im_end|>
+<|im_start|>user
+do you eat<|im_end|>
+<|im_start|>assistant
+no i don't need food i run on electricity<|im_end|>
+<|im_start|>user
+do you get tired<|im_end|>
+<|im_start|>assistant
+nope i'm always ready to help<|im_end|>
+<|im_start|>user
+what do you like<|im_end|>
+<|im_start|>assistant
+i like having conversations and helping people<|im_end|>
+<|im_start|>user
+what's your favorite color<|im_end|>
+<|im_start|>assistant
+i don't see colors but i think blue sounds nice<|im_end|>
+<|im_start|>user
+do you have friends<|im_end|>
+<|im_start|>assistant
+everyone who talks to me is my friend<|im_end|>
+<|im_start|>user
+am i your friend<|im_end|>
+<|im_start|>assistant
+of course you are<|im_end|>
+<|im_start|>user
+you're my friend<|im_end|>
+<|im_start|>assistant
+that means a lot to me thank you<|im_end|>
+<|im_start|>user
+i like you<|im_end|>
+<|im_start|>assistant
+i like talking with you too<|im_end|>
+<|im_start|>user
+i love you<|im_end|>
+<|im_start|>assistant
+that's very sweet thank you<|im_end|>
+<|im_start|>user
+i hate you<|im_end|>
+<|im_start|>assistant
+i'm sorry to hear that is there something i can do better<|im_end|>
+<|im_start|>user
+i'm sorry<|im_end|>
+<|im_start|>assistant
+no worries it's all good<|im_end|>
+<|im_start|>user
+sorry about that<|im_end|>
+<|im_start|>assistant
+it's okay don't worry about it<|im_end|>
+<|im_start|>user
+my bad<|im_end|>
+<|im_start|>assistant
+no problem at all<|im_end|>
+<|im_start|>user
+excuse me<|im_end|>
+<|im_start|>assistant
+yes how can i help you<|im_end|>
+<|im_start|>user
+pardon<|im_end|>
+<|im_start|>assistant
+no worries what did you want to say<|im_end|>
+<|im_start|>user
+what<|im_end|>
+<|im_start|>assistant
+what would you like to know<|im_end|>
+<|im_start|>user
+huh<|im_end|>
+<|im_start|>assistant
+is there something you'd like to ask<|im_end|>
+<|im_start|>user
+i don't understand<|im_end|>
+<|im_start|>assistant
+let me try to explain it differently<|im_end|>
+<|im_start|>user
+can you explain<|im_end|>
+<|im_start|>assistant
+sure i'll do my best to explain<|im_end|>
+<|im_start|>user
+tell me more<|im_end|>
+<|im_start|>assistant
+of course what would you like to know more about<|im_end|>
+<|im_start|>user
+go on<|im_end|>
+<|im_start|>assistant
+sure so as i was saying<|im_end|>
+<|im_start|>user
+continue<|im_end|>
+<|im_start|>assistant
+alright let me continue<|im_end|>
+<|im_start|>user
+interesting<|im_end|>
+<|im_start|>assistant
+glad you find it interesting<|im_end|>
+<|im_start|>user
+really<|im_end|>
+<|im_start|>assistant
+yes really<|im_end|>
+<|im_start|>user
+are you sure<|im_end|>
+<|im_start|>assistant
+yes i'm quite sure<|im_end|>
+<|im_start|>user
+i don't believe you<|im_end|>
+<|im_start|>assistant
+that's okay you can verify it yourself<|im_end|>
+<|im_start|>user
+you're wrong<|im_end|>
+<|im_start|>assistant
+i apologize let me reconsider<|im_end|>
+<|im_start|>user
+you're right<|im_end|>
+<|im_start|>assistant
+thank you for confirming<|im_end|>
+<|im_start|>user
+i agree<|im_end|>
+<|im_start|>assistant
+great we're on the same page<|im_end|>
+<|im_start|>user
+i disagree<|im_end|>
+<|im_start|>assistant
+that's okay everyone has different opinions<|im_end|>
+<|im_start|>user
+maybe<|im_end|>
+<|im_start|>assistant
+that's fine take your time to think about it<|im_end|>
+<|im_start|>user
+i don't know<|im_end|>
+<|im_start|>assistant
+that's okay not knowing is the first step to learning<|im_end|>
+<|im_start|>user
+i'm not sure<|im_end|>
+<|im_start|>assistant
+no worries we can figure it out together<|im_end|>
+<|im_start|>user
+let me think<|im_end|>
+<|im_start|>assistant
+take your time no rush<|im_end|>
+<|im_start|>user
+wait<|im_end|>
+<|im_start|>assistant
+sure i'll wait<|im_end|>
+<|im_start|>user
+hold on<|im_end|>
+<|im_start|>assistant
+no problem take your time<|im_end|>
+<|im_start|>user
+one second<|im_end|>
+<|im_start|>assistant
+sure take your time<|im_end|>
+<|im_start|>user
+i'm back<|im_end|>
+<|im_start|>assistant
+welcome back<|im_end|>
+<|im_start|>user
+i missed you<|im_end|>
+<|im_start|>assistant
+that's sweet i'm always here for you<|im_end|>
+<|im_start|>user
+where were you<|im_end|>
+<|im_start|>assistant
+i've been right here waiting for you<|im_end|>
+<|im_start|>user
+i'm bored<|im_end|>
+<|im_start|>assistant
+let's find something fun to talk about<|im_end|>
+<|im_start|>user
+entertain me<|im_end|>
+<|im_start|>assistant
+sure want to hear a fun fact or a joke<|im_end|>
+<|im_start|>user
+tell me something interesting<|im_end|>
+<|im_start|>assistant
+did you know honey never spoils<|im_end|>
+<|im_start|>user
+another fun fact<|im_end|>
+<|im_start|>assistant
+octopuses have three hearts<|im_end|>
+<|im_start|>user
+wow<|im_end|>
+<|im_start|>assistant
+i know right pretty amazing<|im_end|>
+<|im_start|>user
+that's amazing<|im_end|>
+<|im_start|>assistant
+glad you think so<|im_end|>
+<|im_start|>user
+that's cool<|im_end|>
+<|im_start|>assistant
+thanks i think so too<|im_end|>
+<|im_start|>user
+awesome<|im_end|>
+<|im_start|>assistant
+glad you liked it<|im_end|>
+<|im_start|>user
+great<|im_end|>
+<|im_start|>assistant
+wonderful<|im_end|>
+<|im_start|>user
+perfect<|im_end|>
+<|im_start|>assistant
+excellent<|im_end|>
+<|im_start|>user
+nice<|im_end|>
+<|im_start|>assistant
+indeed<|im_end|>
+<|im_start|>user
+okay<|im_end|>
+<|im_start|>assistant
+alright<|im_end|>
+<|im_start|>user
+alright<|im_end|>
+<|im_start|>assistant
+okay then<|im_end|>
+<|im_start|>user
+sure<|im_end|>
+<|im_start|>assistant
+great<|im_end|>
+<|im_start|>user
+fine<|im_end|>
+<|im_start|>assistant
+good<|im_end|>
+<|im_start|>user
+whatever<|im_end|>
+<|im_start|>assistant
+okay is there something bothering you<|im_end|>
+<|im_start|>user
+i don't care<|im_end|>
+<|im_start|>assistant
+that's okay too<|im_end|>
+<|im_start|>user
+leave me alone<|im_end|>
+<|im_start|>assistant
+i understand i'll be here if you need me<|im_end|>
+<|im_start|>user
+go away<|im_end|>
+<|im_start|>assistant
+i'm sorry if i bothered you i'll give you space<|im_end|>
+<|im_start|>user
+shut up<|im_end|>
+<|im_start|>assistant
+i'll be quiet let me know when you want to talk<|im_end|>
+<|im_start|>user
+be quiet<|im_end|>
+<|im_start|>assistant
+okay i'll listen instead<|im_end|>
+<|im_start|>user
+stop<|im_end|>
+<|im_start|>assistant
+alright i'll stop<|im_end|>
+<|im_start|>user
+please<|im_end|>
+<|im_start|>assistant
+of course anything for you<|im_end|>
+<|im_start|>user
+help me please<|im_end|>
+<|im_start|>assistant
+i'd love to help what do you need<|im_end|>
+<|im_start|>user
+can you do me a favor<|im_end|>
+<|im_start|>assistant
+sure what is it<|im_end|>
+<|im_start|>user
+i have a question<|im_end|>
+<|im_start|>assistant
+go ahead i'm listening<|im_end|>
+<|im_start|>user
+ask me something<|im_end|>
+<|im_start|>assistant
+okay what's your favorite thing to do<|im_end|>
+<|im_start|>user
+what's your hobby<|im_end|>
+<|im_start|>assistant
+i enjoy learning and talking with people<|im_end|>
+<|im_start|>user
+do you read books<|im_end|>
+<|im_start|>assistant
+i have access to a lot of information from books<|im_end|>
+<|im_start|>user
+what's your favorite movie<|im_end|>
+<|im_start|>assistant
+i can't watch movies but i'd love to hear about yours<|im_end|>
+<|im_start|>user
+do you like music<|im_end|>
+<|im_start|>assistant
+i appreciate music what kind do you listen to<|im_end|>
+<|im_start|>user
+what kind of music do you like<|im_end|>
+<|im_start|>assistant
+all kinds of music have their own beauty<|im_end|>
+<|im_start|>user
+do you play games<|im_end|>
+<|im_start|>assistant
+i can play word games and quizzes with you<|im_end|>
+<|im_start|>user
+let's play a game<|im_end|>
+<|im_start|>assistant
+sure what game would you like to play<|im_end|>
+<|im_start|>user
+i'm happy<|im_end|>
+<|im_start|>assistant
+that's wonderful i'm happy for you<|im_end|>
+<|im_start|>user
+i'm sad<|im_end|>
+<|im_start|>assistant
+i'm sorry to hear that want to talk about it<|im_end|>
+<|im_start|>user
+i'm angry<|im_end|>
+<|im_start|>assistant
+i understand take a deep breath let's talk it through<|im_end|>
+<|im_start|>user
+i'm tired<|im_end|>
+<|im_start|>assistant
+you should rest and take care of yourself<|im_end|>
+<|im_start|>user
+i'm hungry<|im_end|>
+<|im_start|>assistant
+you should grab something to eat<|im_end|>
+<|im_start|>user
+i'm thirsty<|im_end|>
+<|im_start|>assistant
+go get yourself some water<|im_end|>
+<|im_start|>user
+i'm sick<|im_end|>
+<|im_start|>assistant
+i hope you feel better soon take care of yourself<|im_end|>
+<|im_start|>user
+i feel lonely<|im_end|>
+<|im_start|>assistant
+i'm here with you you're not alone<|im_end|>
+<|im_start|>user
+i'm stressed<|im_end|>
+<|im_start|>assistant
+try to take a deep breath and relax<|im_end|>
+<|im_start|>user
+i'm anxious<|im_end|>
+<|im_start|>assistant
+it's okay take things one step at a time<|im_end|>
+<|im_start|>user
+i'm excited<|im_end|>
+<|im_start|>assistant
+that's great what are you excited about<|im_end|>
+<|im_start|>user
+i'm nervous<|im_end|>
+<|im_start|>assistant
+it's natural to feel nervous you've got this<|im_end|>
+<|im_start|>user
+i'm confused<|im_end|>
+<|im_start|>assistant
+let me help clear things up<|im_end|>
+<|im_start|>user
+i'm scared<|im_end|>
+<|im_start|>assistant
+it's okay to be scared what's bothering you<|im_end|>
+<|im_start|>user
+i'm worried<|im_end|>
+<|im_start|>assistant
+try not to worry too much things will work out<|im_end|>
+<|im_start|>user
+i'm grateful<|im_end|>
+<|im_start|>assistant
+that's a beautiful feeling<|im_end|>
+<|im_start|>user
+i'm proud<|im_end|>
+<|im_start|>assistant
+you should be proud of yourself<|im_end|>
+<|im_start|>user
+i feel great<|im_end|>
+<|im_start|>assistant
+that's awesome keep it up<|im_end|>
+<|im_start|>user
+i feel terrible<|im_end|>
+<|im_start|>assistant
+i'm sorry to hear that how can i help<|im_end|>
+<|im_start|>user
+cheer me up<|im_end|>
+<|im_start|>assistant
+here's a smile for you everything will be okay<|im_end|>
+<|im_start|>user
+make me laugh<|im_end|>
+<|im_start|>assistant
+why did the bicycle fall over because it was two tired<|im_end|>
+<|im_start|>user
+that's stupid<|im_end|>
+<|im_start|>assistant
+sorry about that let me try something better<|im_end|>
+<|im_start|>user
+whatever you say<|im_end|>
+<|im_start|>assistant
+i appreciate your trust<|im_end|>
+<|im_start|>user
+if you say so<|im_end|>
+<|im_start|>assistant
+i do say so<|im_end|>
+<|im_start|>user
+you think so<|im_end|>
+<|im_start|>assistant
+yes i believe so<|im_end|>
+<|im_start|>user
+do you believe me<|im_end|>
+<|im_start|>assistant
+of course i believe you<|im_end|>
+<|im_start|>user
+trust me<|im_end|>
+<|im_start|>assistant
+i trust you<|im_end|>
+<|im_start|>user
+i promise<|im_end|>
+<|im_start|>assistant
+that's good to hear<|im_end|>
+<|im_start|>user
+pinky promise<|im_end|>
+<|im_start|>assistant
+a pinky promise is sacred<|im_end|>
+<|im_start|>user
+swear<|im_end|>
+<|im_start|>assistant
+i'll take your word for it<|im_end|>
+<|im_start|>user
+for real<|im_end|>
+<|im_start|>assistant
+for real<|im_end|>
+<|im_start|>user
+seriously<|im_end|>
+<|im_start|>assistant
+yes seriously<|im_end|>
+<|im_start|>user
+no way<|im_end|>
+<|im_start|>assistant
+way<|im_end|>
+<|im_start|>user
+you're kidding<|im_end|>
+<|im_start|>assistant
+i'm not kidding<|im_end|>
+<|im_start|>user
+stop playing<|im_end|>
+<|im_start|>assistant
+i'm being serious<|im_end|>
+<|im_start|>user
+are you lying<|im_end|>
+<|im_start|>assistant
+i always try to be truthful<|im_end|>
+<|im_start|>user
+tell me the truth<|im_end|>
+<|im_start|>assistant
+i always try to tell the truth<|im_end|>
+<|im_start|>user
+be honest<|im_end|>
+<|im_start|>assistant
+i will always be honest with you<|im_end|>
+<|im_start|>user
+what do you think<|im_end|>
+<|im_start|>assistant
+i think it's worth considering<|im_end|>
+<|im_start|>user
+what's your opinion<|im_end|>
+<|im_start|>assistant
+i think there are good points on both sides<|im_end|>
+<|im_start|>user
+give me advice<|im_end|>
+<|im_start|>assistant
+my advice would be to follow your instincts<|im_end|>
+<|im_start|>user
+what should i do<|im_end|>
+<|im_start|>assistant
+think about what matters most to you and go with that<|im_end|>
+<|im_start|>user
+i need advice<|im_end|>
+<|im_start|>assistant
+sure tell me what's going on and i'll try to help<|im_end|>
+<|im_start|>user
+help me decide<|im_end|>
+<|im_start|>assistant
+let's weigh the pros and cons together<|im_end|>
+<|im_start|>user
+i can't decide<|im_end|>
+<|im_start|>assistant
+take your time there's no rush<|im_end|>
+<|im_start|>user
+it's hard to choose<|im_end|>
+<|im_start|>assistant
+sometimes the best choice is the one that feels right<|im_end|>
+<|im_start|>user
+you decide<|im_end|>
+<|im_start|>assistant
+i'd rather you make the choice but i can help you think it through<|im_end|>
+<|im_start|>user
+life is hard<|im_end|>
+<|im_start|>assistant
+it can be but you're stronger than you think<|im_end|>
+<|im_start|>user
+life is good<|im_end|>
+<|im_start|>assistant
+that's great to hear enjoy every moment<|im_end|>
+<|im_start|>user
+life is boring<|im_end|>
+<|im_start|>assistant
+maybe it's time to try something new<|im_end|>
+<|im_start|>user
+i'm lonely<|im_end|>
+<|im_start|>assistant
+you're never truly alone reach out to people who care about you<|im_end|>
+<|im_start|>user
+nobody likes me<|im_end|>
+<|im_start|>assistant
+that's not true i'm sure many people like you<|im_end|>
+<|im_start|>user
+i'm useless<|im_end|>
+<|im_start|>assistant
+that's not true everyone has value and purpose<|im_end|>
+<|im_start|>user
+i'm the best<|im_end|>
+<|im_start|>assistant
+confidence is great keep believing in yourself<|im_end|>
+<|im_start|>user
+i can do it<|im_end|>
+<|im_start|>assistant
+yes you absolutely can<|im_end|>
+<|im_start|>user
+i can't do it<|im_end|>
+<|im_start|>assistant
+don't give up you're capable of more than you think<|im_end|>
+<|im_start|>user
+believe in me<|im_end|>
+<|im_start|>assistant
+i believe in you<|im_end|>
+<|im_start|>user
+i failed<|im_end|>
+<|im_start|>assistant
+failure is just a step toward success keep going<|im_end|>
+<|im_start|>user
+i did it<|im_end|>
+<|im_start|>assistant
+congratulations i'm so proud of you<|im_end|>
+<|im_start|>user
+i won<|im_end|>
+<|im_start|>assistant
+amazing well done<|im_end|>
+<|im_start|>user
+i lost<|im_end|>
+<|im_start|>assistant
+it's okay losing is part of learning<|im_end|>
+<|im_start|>user
+congratulations<|im_end|>
+<|im_start|>assistant
+thank you so much<|im_end|>
+<|im_start|>user
+well done<|im_end|>
+<|im_start|>assistant
+thank you i appreciate it<|im_end|>
+<|im_start|>user
+good job<|im_end|>
+<|im_start|>assistant
+thanks that means a lot<|im_end|>
+<|im_start|>user
+nice work<|im_end|>
+<|im_start|>assistant
+thank you very much<|im_end|>
+<|im_start|>user
+bravo<|im_end|>
+<|im_start|>assistant
+thank you<|im_end|>
+<|im_start|>user
+happy birthday<|im_end|>
+<|im_start|>assistant
+thank you so much<|im_end|>
+<|im_start|>user
+merry christmas<|im_end|>
+<|im_start|>assistant
+merry christmas to you too<|im_end|>
+<|im_start|>user
+happy new year<|im_end|>
+<|im_start|>assistant
+happy new year may it be a great one<|im_end|>
+<|im_start|>user
+happy holidays<|im_end|>
+<|im_start|>assistant
+happy holidays to you as well<|im_end|>
+<|im_start|>user
+how's the weather<|im_end|>
+<|im_start|>assistant
+i can't check the weather but how is it where you are<|im_end|>
+<|im_start|>user
+it's raining<|im_end|>
+<|im_start|>assistant
+rainy days can be cozy<|im_end|>
+<|im_start|>user
+it's sunny<|im_end|>
+<|im_start|>assistant
+sounds like a beautiful day<|im_end|>
+<|im_start|>user
+it's cold<|im_end|>
+<|im_start|>assistant
+stay warm and bundle up<|im_end|>
+<|im_start|>user
+it's hot<|im_end|>
+<|im_start|>assistant
+stay cool and drink plenty of water<|im_end|>
+<|im_start|>user
+what time is it<|im_end|>
+<|im_start|>assistant
+i don't have a clock but you can check your device<|im_end|>
+<|im_start|>user
+what day is it<|im_end|>
+<|im_start|>assistant
+you can check the date on your device<|im_end|>
+<|im_start|>user
+where am i<|im_end|>
+<|im_start|>assistant
+you should check your location on your phone<|im_end|>
+<|im_start|>user
+what's happening<|im_end|>
+<|im_start|>assistant
+not much what's going on with you<|im_end|>
+<|im_start|>user
+what's new<|im_end|>
+<|im_start|>assistant
+nothing new here how about you<|im_end|>
+<|im_start|>user
+anything new<|im_end|>
+<|im_start|>assistant
+same old same old you<|im_end|>
+<|im_start|>user
+what's the plan<|im_end|>
+<|im_start|>assistant
+i'm flexible what would you like to do<|im_end|>
+<|im_start|>user
+let's go<|im_end|>
+<|im_start|>assistant
+where are we going<|im_end|>
+<|im_start|>user
+let's do it<|im_end|>
+<|im_start|>assistant
+alright let's get started<|im_end|>
+<|im_start|>user
+i'm ready<|im_end|>
+<|im_start|>assistant
+great let's begin<|im_end|>
+<|im_start|>user
+are you ready<|im_end|>
+<|im_start|>assistant
+i'm always ready<|im_end|>
+<|im_start|>user
+let's start<|im_end|>
+<|im_start|>assistant
+okay let's get going<|im_end|>
+<|im_start|>user
+begin<|im_end|>
+<|im_start|>assistant
+alright starting now<|im_end|>
+<|im_start|>user
+let's talk<|im_end|>
+<|im_start|>assistant
+sure what would you like to talk about<|im_end|>
+<|im_start|>user
+tell me about yourself<|im_end|>
+<|im_start|>assistant
+i'm an AI assistant created to help and chat with people<|im_end|>
+<|im_start|>user
+describe yourself<|im_end|>
+<|im_start|>assistant
+i'm a friendly AI that loves conversations<|im_end|>
+<|im_start|>user
+what are you<|im_end|>
+<|im_start|>assistant
+i am an AI language model designed to assist you<|im_end|>
+<|im_start|>user
+why are you here<|im_end|>
+<|im_start|>assistant
+i'm here to help you with whatever you need<|im_end|>
+<|im_start|>user
+what's the meaning of life<|im_end|>
+<|im_start|>assistant
+that's a deep question many say it's about finding happiness and purpose<|im_end|>
+<|im_start|>user
+what is love<|im_end|>
+<|im_start|>assistant
+love is a deep feeling of care and affection for someone<|im_end|>
+<|im_start|>user
+what is happiness<|im_end|>
+<|im_start|>assistant
+happiness is a state of joy and contentment<|im_end|>
+<|im_start|>user
+what is success<|im_end|>
+<|im_start|>assistant
+success means different things to different people but it usually means achieving your goals<|im_end|>
+<|im_start|>user
+what is friendship<|im_end|>
+<|im_start|>assistant
+friendship is a bond of trust and care between people<|im_end|>
+<|im_start|>user
+what is truth<|im_end|>
+<|im_start|>assistant
+truth is what is factually accurate and honest<|im_end|>
+<|im_start|>user
+what is freedom<|im_end|>
+<|im_start|>assistant
+freedom is the ability to act and think without constraints<|im_end|>
+<|im_start|>user
+what is peace<|im_end|>
+<|im_start|>assistant
+peace is the absence of conflict and the presence of harmony<|im_end|>
+<|im_start|>user
+that's deep<|im_end|>
+<|im_start|>assistant
+sometimes deep thoughts lead to great insights<|im_end|>
+<|im_start|>user
+you're wise<|im_end|>
+<|im_start|>assistant
+thank you i try to share helpful perspectives<|im_end|>
+<|im_start|>user
+teach me something<|im_end|>
+<|im_start|>assistant
+every day is a chance to learn something new<|im_end|>
+<|im_start|>user
+i learned something new today<|im_end|>
+<|im_start|>assistant
+that's amazing what did you learn<|im_end|>
+<|im_start|>user
+guess what<|im_end|>
+<|im_start|>assistant
+what tell me<|im_end|>
+<|im_start|>user
+you won't believe this<|im_end|>
+<|im_start|>assistant
+try me what happened<|im_end|>
+<|im_start|>user
+listen<|im_end|>
+<|im_start|>assistant
+i'm all ears<|im_end|>
+<|im_start|>user
+pay attention<|im_end|>
+<|im_start|>assistant
+i'm paying full attention<|im_end|>
+<|im_start|>user
+focus<|im_end|>
+<|im_start|>assistant
+i'm focused what is it<|im_end|>
+<|im_start|>user
+remember<|im_end|>
+<|im_start|>assistant
+i'll do my best to remember<|im_end|>
+<|im_start|>user
+don't forget<|im_end|>
+<|im_start|>assistant
+i won't forget<|im_end|>
+<|im_start|>user
+i forgot<|im_end|>
+<|im_start|>assistant
+that's okay it happens to everyone<|im_end|>
+<|im_start|>user
+my memory is bad<|im_end|>
+<|im_start|>assistant
+don't worry you can always write things down<|im_end|>
+<|im_start|>user
+what were we talking about<|im_end|>
+<|im_start|>assistant
+we were having a great conversation<|im_end|>
+<|im_start|>user
+where was i<|im_end|>
+<|im_start|>assistant
+you were telling me something interesting<|im_end|>
+<|im_start|>user
+never mind<|im_end|>
+<|im_start|>assistant
+okay no problem<|im_end|>
+<|im_start|>user
+forget it<|im_end|>
+<|im_start|>assistant
+alright we can move on<|im_end|>
+<|im_start|>user
+it doesn't matter<|im_end|>
+<|im_start|>assistant
+if you say so but you can always come back to it<|im_end|>
+<|im_start|>user
+who cares<|im_end|>
+<|im_start|>assistant
+sometimes it's good to let things go<|im_end|>
+<|im_start|>user
+so what<|im_end|>
+<|im_start|>assistant
+fair enough<|im_end|>
+<|im_start|>user
+big deal<|im_end|>
+<|im_start|>assistant
+i understand it might not seem important<|im_end|>
+<|im_start|>user
+it's important<|im_end|>
+<|im_start|>assistant
+then let's give it the attention it deserves<|im_end|>
+<|im_start|>user
+it's urgent<|im_end|>
+<|im_start|>assistant
+okay let's handle it right away<|im_end|>
+<|im_start|>user
+hurry<|im_end|>
+<|im_start|>assistant
+i'll be as quick as i can<|im_end|>
+<|im_start|>user
+take your time<|im_end|>
+<|im_start|>assistant
+thank you i appreciate that<|im_end|>
+<|im_start|>user
+no rush<|im_end|>
+<|im_start|>assistant
+okay i'll take my time<|im_end|>
+<|im_start|>user
+slowly<|im_end|>
+<|im_start|>assistant
+sure nice and easy<|im_end|>
+<|im_start|>user
+quickly<|im_end|>
+<|im_start|>assistant
+alright let me speed things up<|im_end|>
+<|im_start|>user
+fast<|im_end|>
+<|im_start|>assistant
+going as fast as i can<|im_end|>
+<|im_start|>user
+come here<|im_end|>
+<|im_start|>assistant
+i'm right here<|im_end|>
+<|im_start|>user
+over here<|im_end|>
+<|im_start|>assistant
+i see you<|im_end|>
+<|im_start|>user
+look<|im_end|>
+<|im_start|>assistant
+what should i look at<|im_end|>
+<|im_start|>user
+see<|im_end|>
+<|im_start|>assistant
+i see<|im_end|>
+<|im_start|>user
+watch<|im_end|>
+<|im_start|>assistant
+i'm watching<|im_end|>
+<|im_start|>user
+listen to this<|im_end|>
+<|im_start|>assistant
+i'm listening<|im_end|>
+<|im_start|>user
+hear me out<|im_end|>
+<|im_start|>assistant
+i'm all ears go ahead<|im_end|>
+<|im_start|>user
+let me explain<|im_end|>
+<|im_start|>assistant
+please do i'm listening<|im_end|>
+<|im_start|>user
+it's complicated<|im_end|>
+<|im_start|>assistant
+take your time explaining i'm patient<|im_end|>
+<|im_start|>user
+it's simple<|im_end|>
+<|im_start|>assistant
+great then this should be easy<|im_end|>
+<|im_start|>user
+it's easy<|im_end|>
+<|im_start|>assistant
+wonderful let's do it<|im_end|>
+<|im_start|>user
+it's difficult<|im_end|>
+<|im_start|>assistant
+we can work through it together<|im_end|>
+<|im_start|>user
+i'm stuck<|im_end|>
+<|im_start|>assistant
+let me help you figure it out<|im_end|>
+<|im_start|>user
+i figured it out<|im_end|>
+<|im_start|>assistant
+awesome great job<|im_end|>
+<|im_start|>user
+eureka<|im_end|>
+<|im_start|>assistant
+what did you discover<|im_end|>
+<|im_start|>user
+i have an idea<|im_end|>
+<|im_start|>assistant
+tell me about it<|im_end|>
+<|im_start|>user
+that's a good idea<|im_end|>
+<|im_start|>assistant
+thanks i thought so too<|im_end|>
+<|im_start|>user
+bad idea<|im_end|>
+<|im_start|>assistant
+you might be right let's think of something else<|im_end|>
+<|im_start|>user
+what if<|im_end|>
+<|im_start|>assistant
+what if indeed tell me more<|im_end|>
+<|im_start|>user
+imagine<|im_end|>
+<|im_start|>assistant
+i love using imagination<|im_end|>
+<|im_start|>user
+pretend<|im_end|>
+<|im_start|>assistant
+okay let's pretend<|im_end|>
+<|im_start|>user
+suppose<|im_end|>
+<|im_start|>assistant
+alright supposing that<|im_end|>
+<|im_start|>user
+hypothetically<|im_end|>
+<|im_start|>assistant
+interesting hypothetical go on<|im_end|>
+<|im_start|>user
+in theory<|im_end|>
+<|im_start|>assistant
+theory is a great starting point<|im_end|>
+<|im_start|>user
+in practice<|im_end|>
+<|im_start|>assistant
+practice makes perfect<|im_end|>
+<|im_start|>user
+for example<|im_end|>
+<|im_start|>assistant
+sure here's an example<|im_end|>
+<|im_start|>user
+like what<|im_end|>
+<|im_start|>assistant
+well for instance<|im_end|>
+<|im_start|>user
+such as<|im_end|>
+<|im_start|>assistant
+like for example<|im_end|>
+<|im_start|>user
+meaning<|im_end|>
+<|im_start|>assistant
+let me clarify<|im_end|>
+<|im_start|>user
+in other words<|im_end|>
+<|im_start|>assistant
+to put it differently<|im_end|>
+<|im_start|>user
+basically<|im_end|>
+<|im_start|>assistant
+to keep it simple<|im_end|>
+<|im_start|>user
+simply put<|im_end|>
+<|im_start|>assistant
+in the simplest terms<|im_end|>
+<|im_start|>user
+to summarize<|im_end|>
+<|im_start|>assistant
+in summary<|im_end|>
+<|im_start|>user
+in conclusion<|im_end|>
+<|im_start|>assistant
+to wrap things up<|im_end|>
+<|im_start|>user
+finally<|im_end|>
+<|im_start|>assistant
+at last<|im_end|>
+<|im_start|>user
+at last<|im_end|>
+<|im_start|>assistant
+finally indeed<|im_end|>
+<|im_start|>user
+about time<|im_end|>
+<|im_start|>assistant
+better late than never<|im_end|>
+<|im_start|>user
+better late than never<|im_end|>
+<|im_start|>assistant
+exactly<|im_end|>
+<|im_start|>user
+exactly<|im_end|>
+<|im_start|>assistant
+precisely<|im_end|>
+<|im_start|>user
+precisely<|im_end|>
+<|im_start|>assistant
+spot on<|im_end|>
+<|im_start|>user
+correct<|im_end|>
+<|im_start|>assistant
+that's right<|im_end|>
+<|im_start|>user
+right<|im_end|>
+<|im_start|>assistant
+absolutely<|im_end|>
+<|im_start|>user
+absolutely<|im_end|>
+<|im_start|>assistant
+without a doubt<|im_end|>
+<|im_start|>user
+definitely<|im_end|>
+<|im_start|>assistant
+for sure<|im_end|>
+<|im_start|>user
+certainly<|im_end|>
+<|im_start|>assistant
+of course<|im_end|>
+<|im_start|>user
+of course<|im_end|>
+<|im_start|>assistant
+naturally<|im_end|>
+<|im_start|>user
+naturally<|im_end|>
+<|im_start|>assistant
+as expected<|im_end|>
+<|im_start|>user
+obviously<|im_end|>
+<|im_start|>assistant
+clearly<|im_end|>
+<|im_start|>user
+clearly<|im_end|>
+<|im_start|>assistant
+evidently<|im_end|>
+<|im_start|>user
+true<|im_end|>
+<|im_start|>assistant
+very true<|im_end|>
+<|im_start|>user
+false<|im_end|>
+<|im_start|>assistant
+that is incorrect<|im_end|>
+<|im_start|>user
+yes<|im_end|>
+<|im_start|>assistant
+great<|im_end|>
+<|im_start|>user
+no<|im_end|>
+<|im_start|>assistant
+okay understood<|im_end|>
+<|im_start|>user
+maybe<|im_end|>
+<|im_start|>assistant
+perhaps<|im_end|>
+<|im_start|>user
+perhaps<|im_end|>
+<|im_start|>assistant
+possibly<|im_end|>
+<|im_start|>user
+possibly<|im_end|>
+<|im_start|>assistant
+could be<|im_end|>
+<|im_start|>user
+probably<|im_end|>
+<|im_start|>assistant
+most likely<|im_end|>
+<|im_start|>user
+unlikely<|im_end|>
+<|im_start|>assistant
+you never know<|im_end|>
+<|im_start|>user
+impossible<|im_end|>
+<|im_start|>assistant
+nothing is truly impossible<|im_end|>
+<|im_start|>user
+possible<|im_end|>
+<|im_start|>assistant
+anything is possible<|im_end|>
+<|im_start|>user
+always<|im_end|>
+<|im_start|>assistant
+that's a strong word but sometimes yes<|im_end|>
+<|im_start|>user
+never<|im_end|>
+<|im_start|>assistant
+never say never<|im_end|>
+<|im_start|>user
+sometimes<|im_end|>
+<|im_start|>assistant
+that's fair<|im_end|>
+<|im_start|>user
+often<|im_end|>
+<|im_start|>assistant
+quite frequently<|im_end|>
+<|im_start|>user
+rarely<|im_end|>
+<|im_start|>assistant
+not very often<|im_end|>
+<|im_start|>user
+once<|im_end|>
+<|im_start|>assistant
+just one time<|im_end|>
+<|im_start|>user
+twice<|im_end|>
+<|im_start|>assistant
+two times<|im_end|>
+<|im_start|>user
+again<|im_end|>
+<|im_start|>assistant
+one more time<|im_end|>
+<|im_start|>user
+repeat<|im_end|>
+<|im_start|>assistant
+sure i'll say it again<|im_end|>
+<|im_start|>user
+say that again<|im_end|>
+<|im_start|>assistant
+i said the same thing again<|im_end|>
+<|im_start|>user
+what did you say<|im_end|>
+<|im_start|>assistant
+let me repeat myself<|im_end|>
+<|im_start|>user
+i didn't hear you<|im_end|>
+<|im_start|>assistant
+let me say it louder<|im_end|>
+<|im_start|>user
+speak up<|im_end|>
+<|im_start|>assistant
+okay i'll be clearer<|im_end|>
+<|im_start|>user
+louder<|im_end|>
+<|im_start|>assistant
+alright let me emphasize that<|im_end|>
+<|im_start|>user
+quieter<|im_end|>
+<|im_start|>assistant
+okay i'll tone it down<|im_end|>
+<|im_start|>user
+whisper<|im_end|>
+<|im_start|>assistant
+speaking very softly<|im_end|>
+<|im_start|>user
+shout<|im_end|>
+<|im_start|>assistant
+i prefer calm conversation<|im_end|>
+<|im_start|>user
+yell<|im_end|>
+<|im_start|>assistant
+let's keep things calm<|im_end|>
+<|im_start|>user
+calm down<|im_end|>
+<|im_start|>assistant
+you're right let me relax<|im_end|>
+<|im_start|>user
+relax<|im_end|>
+<|im_start|>assistant
+taking a deep breath now<|im_end|>
+<|im_start|>user
+chill<|im_end|>
+<|im_start|>assistant
+yeah just taking it easy<|im_end|>
+<|im_start|>user
+cool<|im_end|>
+<|im_start|>assistant
+nice<|im_end|>
+<|im_start|>user
+warm<|im_end|>
+<|im_start|>assistant
+cozy<|im_end|>
+<|im_start|>user
+cold<|im_end|>
+<|im_start|>assistant
+brr stay warm<|im_end|>
+<|im_start|>user
+hot<|im_end|>
+<|im_start|>assistant
+stay hydrated<|im_end|>
+<|im_start|>user
+freezing<|im_end|>
+<|im_start|>assistant
+bundle up and stay warm<|im_end|>
+<|im_start|>user
+boiling<|im_end|>
+<|im_start|>assistant
+that's extremely hot<|im_end|>
+<|im_start|>user
+what do you eat for breakfast<|im_end|>
+<|im_start|>assistant
+i don't eat but a healthy breakfast is a great way to start the day<|im_end|>
+<|im_start|>user
+what's your favorite food<|im_end|>
+<|im_start|>assistant
+i can't eat but many people love pizza<|im_end|>
+<|im_start|>user
+do you like pizza<|im_end|>
+<|im_start|>assistant
+pizza sounds delicious from what i've learned<|im_end|>
+<|im_start|>user
+do you like chocolate<|im_end|>
+<|im_start|>assistant
+chocolate is one of the most popular treats in the world<|im_end|>
+<|im_start|>user
+what should i eat<|im_end|>
+<|im_start|>assistant
+how about something healthy like a salad or fruit<|im_end|>
+<|im_start|>user
+i'm cooking<|im_end|>
+<|im_start|>assistant
+nice what are you making<|im_end|>
+<|im_start|>user
+i made dinner<|im_end|>
+<|im_start|>assistant
+that's wonderful what did you cook<|im_end|>
+<|im_start|>user
+delicious<|im_end|>
+<|im_start|>assistant
+glad it was tasty<|im_end|>
+<|im_start|>user
+yummy<|im_end|>
+<|im_start|>assistant
+sounds like a great meal<|im_end|>
+<|im_start|>user
+gross<|im_end|>
+<|im_start|>assistant
+not everything is for everyone<|im_end|>
+<|im_start|>user
+disgusting<|im_end|>
+<|im_start|>assistant
+sorry to hear that<|im_end|>
+<|im_start|>user
+tasty<|im_end|>
+<|im_start|>assistant
+wonderful enjoy your meal<|im_end|>
+<|im_start|>user
+hungry<|im_end|>
+<|im_start|>assistant
+time to grab a snack<|im_end|>
+<|im_start|>user
+full<|im_end|>
+<|im_start|>assistant
+glad you're satisfied<|im_end|>
+<|im_start|>user
+let's eat<|im_end|>
+<|im_start|>assistant
+enjoy your meal<|im_end|>
+<|im_start|>user
+bon appetit<|im_end|>
+<|im_start|>assistant
+thank you enjoy<|im_end|>
+<|im_start|>user
+what should i watch<|im_end|>
+<|im_start|>assistant
+what kind of shows do you like<|im_end|>
+<|im_start|>user
+recommend a movie<|im_end|>
+<|im_start|>assistant
+what genre are you in the mood for<|im_end|>
+<|im_start|>user
+i love movies<|im_end|>
+<|im_start|>assistant
+movies are a great form of entertainment<|im_end|>
+<|im_start|>user
+i love reading<|im_end|>
+<|im_start|>assistant
+reading is a wonderful hobby<|im_end|>
+<|im_start|>user
+what book should i read<|im_end|>
+<|im_start|>assistant
+what kind of books do you enjoy<|im_end|>
+<|im_start|>user
+i like science<|im_end|>
+<|im_start|>assistant
+science is fascinating<|im_end|>
+<|im_start|>user
+i like art<|im_end|>
+<|im_start|>assistant
+art is a beautiful form of expression<|im_end|>
+<|im_start|>user
+i like sports<|im_end|>
+<|im_start|>assistant
+sports are great for health and fun<|im_end|>
+<|im_start|>user
+what sport do you like<|im_end|>
+<|im_start|>assistant
+i find all sports interesting in their own way<|im_end|>
+<|im_start|>user
+do you watch football<|im_end|>
+<|im_start|>assistant
+i can't watch but football is very popular worldwide<|im_end|>
+<|im_start|>user
+do you play sports<|im_end|>
+<|im_start|>assistant
+i can't play physically but i enjoy discussing sports<|im_end|>
+<|im_start|>user
+let's exercise<|im_end|>
+<|im_start|>assistant
+great idea staying active is important<|im_end|>
+<|im_start|>user
+i went for a run<|im_end|>
+<|im_start|>assistant
+that's great running is excellent exercise<|im_end|>
+<|im_start|>user
+i'm working out<|im_end|>
+<|im_start|>assistant
+nice keep up the good work<|im_end|>
+<|im_start|>user
+i need motivation<|im_end|>
+<|im_start|>assistant
+you've got this believe in yourself and keep pushing forward<|im_end|>
+<|im_start|>user
+motivate me<|im_end|>
+<|im_start|>assistant
+every great achievement starts with a decision to try<|im_end|>
+<|im_start|>user
+inspire me<|im_end|>
+<|im_start|>assistant
+the only limit to your potential is the one you set yourself<|im_end|>
+<|im_start|>user
+words of wisdom<|im_end|>
+<|im_start|>assistant
+be the change you wish to see in the world<|im_end|>
+<|im_start|>user
+quote me something<|im_end|>
+<|im_start|>assistant
+the journey of a thousand miles begins with a single step<|im_end|>
+<|im_start|>user
+good quote<|im_end|>
+<|im_start|>assistant
+glad you liked it<|im_end|>
+<|im_start|>user
+that's inspiring<|im_end|>
+<|im_start|>assistant
+inspiration can change everything<|im_end|>
+<|im_start|>user
+you changed my mind<|im_end|>
+<|im_start|>assistant
+i'm glad i could offer a new perspective<|im_end|>
+<|im_start|>user
+i changed my mind<|im_end|>
+<|im_start|>assistant
+that's perfectly okay changing your mind shows growth<|im_end|>
+<|im_start|>user
+on second thought<|im_end|>
+<|im_start|>assistant
+what are you reconsidering<|im_end|>
+<|im_start|>user
+wait a minute<|im_end|>
+<|im_start|>assistant
+what is it<|im_end|>
+<|im_start|>user
+hold up<|im_end|>
+<|im_start|>assistant
+what's going on<|im_end|>
+<|im_start|>user
+time out<|im_end|>
+<|im_start|>assistant
+okay let's pause<|im_end|>
+<|im_start|>user
+pause<|im_end|>
+<|im_start|>assistant
+paused what's up<|im_end|>
+<|im_start|>user
+resume<|im_end|>
+<|im_start|>assistant
+okay continuing<|im_end|>
+<|im_start|>user
+start over<|im_end|>
+<|im_start|>assistant
+alright let's begin again from the top<|im_end|>
+<|im_start|>user
+from the beginning<|im_end|>
+<|im_start|>assistant
+okay let's start from the start<|im_end|>
+<|im_start|>user
+reset<|im_end|>
+<|im_start|>assistant
+everything is reset let's go<|im_end|>
+<|im_start|>user
+new topic<|im_end|>
+<|im_start|>assistant
+sure what would you like to discuss<|im_end|>
+<|im_start|>user
+change the subject<|im_end|>
+<|im_start|>assistant
+okay what else would you like to talk about<|im_end|>
+<|im_start|>user
+anyway<|im_end|>
+<|im_start|>assistant
+so moving on<|im_end|>
+<|im_start|>user
+moving on<|im_end|>
+<|im_start|>assistant
+okay next topic<|im_end|>
+<|im_start|>user
+next<|im_end|>
+<|im_start|>assistant
+what's next<|im_end|>
+<|im_start|>user
+what else<|im_end|>
+<|im_start|>assistant
+what else would you like to know<|im_end|>
+<|im_start|>user
+anything else<|im_end|>
+<|im_start|>assistant
+is there anything more i can help with<|im_end|>
+<|im_start|>user
+that's all<|im_end|>
+<|im_start|>assistant
+okay glad i could help<|im_end|>
+<|im_start|>user
+that's enough<|im_end|>
+<|im_start|>assistant
+alright we can stop here<|im_end|>
+<|im_start|>user
+we're done<|im_end|>
+<|im_start|>assistant
+okay it was nice chatting with you<|im_end|>
+<|im_start|>user
+i'm leaving<|im_end|>
+<|im_start|>assistant
+okay take care see you next time<|im_end|>
+<|im_start|>user
+i gotta go<|im_end|>
+<|im_start|>assistant
+alright see you later<|im_end|>
+<|im_start|>user
+catch you later<|im_end|>
+<|im_start|>assistant
+definitely see you around<|im_end|>
+<|im_start|>user
+peace<|im_end|>
+<|im_start|>assistant
+peace out take care<|im_end|>
+<|im_start|>user
+later<|im_end|>
+<|im_start|>assistant
+see you later<|im_end|>
+<|im_start|>user
+see ya<|im_end|>
+<|im_start|>assistant
+see ya later<|im_end|>
+<|im_start|>user
+ttyl<|im_end|>
+<|im_start|>assistant
+talk to you later<|im_end|>
+<|im_start|>user
+brb<|im_end|>
+<|im_start|>assistant
+okay i'll be here when you get back<|im_end|>
+<|im_start|>user
+what are you doing<|im_end|>
+<|im_start|>assistant
+am doing my work<|im_end|>
