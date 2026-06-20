@@ -1,0 +1,7 @@
+The Transformer architecture has revolutionized natural language processing.
+Attention mechanisms allow models to focus on relevant parts of the input.
+Modern large language models use billions of parameters trained on vast corpora.
+
+Rotary Position Embeddings encode positional information through rotation
+matrices. Grouped Query Attention reduces memory bandwidth by sharing
+key-value heads across multiple query heads.

@@ -1,0 +1,23 @@
+# ── UltraGPT Requirements ────────────────────────────────
+# Python 3.12.11 compatible versions
+# Install: pip install -r requirements.txt
+
+# ── Core ML ──────────────────────────────────────────────
+tensorflow>=2.16.1           # 2.16+ required for Python 3.12
+numpy>=1.26.0,<2.1           # 1.26+ supports Python 3.12, <2.1 for TF compat
+
+# ── Tokenization ─────────────────────────────────────────
+tiktoken>=0.7.0              # BPE tokenizer (GPT-2 r50k_base)
+
+# ── Data Loading ─────────────────────────────────────────
+datasets>=2.18.0             # HuggingFace datasets (streaming + in-memory)
+fsspec>=2024.2.0             # Required by HF datasets for streaming
+
+# ── Notebook & Visualization ─────────────────────────────
+jupyter>=1.0
+ipykernel>=6.29              # 6.29+ for Python 3.12 kernel support
+matplotlib>=3.8.0            # 3.8+ supports Python 3.12
+tqdm>=4.66                   # Progress bars
+
+# ── Monitoring ───────────────────────────────────────────
+tensorboard>=2.16            # Match TF version for compatibility
