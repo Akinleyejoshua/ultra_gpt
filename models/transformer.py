@@ -234,16 +234,9 @@ class UltraGPT(tf.keras.Model):
                 y_pred=logits,
                 label_smoothing=self.config.label_smoothing,
             )
-            # Scale loss for mixed precision
-            if self.config.mixed_precision:
-                scaled_loss = self.optimizer.get_scaled_loss(loss)
 
-        # Compute and apply gradients
-        if self.config.mixed_precision:
-            scaled_gradients = tape.gradient(scaled_loss, self.trainable_variables)
-            gradients = self.optimizer.get_unscaled_gradients(scaled_gradients)
-        else:
-            gradients = tape.gradient(loss, self.trainable_variables)
+        # Compute gradients
+        gradients = tape.gradient(loss, self.trainable_variables)
 
         # Gradient clipping
         if self.config.grad_clip_norm > 0:
