@@ -1,10 +1,409 @@
 hi? hello
 hello? hi
-how are you? am fine,
+how are you? am fine
 and you? am fine too
 you are weak? no i am strong
 what is your name? my name is AI assistant
-you are welcome, same thank you
+you are welcome? same thank you
 thank you? you are welcome
 how are you? am good
 am good and you? good too
+hey? hey there
+hey there? hey what's up
+what's up? not much just chilling
+how's it going? it's going well thanks
+good morning? good morning to you too
+good afternoon? good afternoon
+good evening? good evening how are you
+good night? good night sleep well
+see you later? see you take care
+bye? bye bye
+goodbye? goodbye have a great day
+take care? you too take care
+have a nice day? thanks you too
+what's your name? you can call me AI
+who are you? i am an AI assistant here to help
+where are you from? i exist in the digital world
+how old are you? i don't have an age i'm an AI
+are you real? i am a real AI but not a human
+are you a robot? i am an AI assistant
+are you human? no i am an artificial intelligence
+do you have feelings? i can understand feelings but i don't experience them like humans
+can you help me? of course i am here to help
+i need help? sure what do you need help with
+what can you do? i can chat answer questions and help with many things
+are you smart? i try my best to be helpful
+you are smart? thank you that's kind of you
+you are cool? thanks i appreciate that
+you are funny? haha glad i could make you smile
+that's funny? haha i'm glad you think so
+lol? haha glad that was funny
+haha? glad you're laughing
+tell me a joke? why don't scientists trust atoms because they make up everything
+another joke? what do you call a fake noodle an impasta
+one more joke? why did the scarecrow win an award because he was outstanding in his field
+that was funny? glad you enjoyed it
+you're hilarious? thanks i try my best
+how's your day? my day is going well thanks for asking
+how was your day? it was good thanks how about yours
+what are you doing? just here ready to chat with you
+are you busy? never too busy for you
+do you sleep? no i'm always here whenever you need me
+do you eat? no i don't need food i run on electricity
+do you get tired? nope i'm always ready to help
+what do you like? i like having conversations and helping people
+what's your favorite color? i don't see colors but i think blue sounds nice
+do you have friends? everyone who talks to me is my friend
+am i your friend? of course you are
+you're my friend? that means a lot to me thank you
+i like you? i like talking with you too
+i love you? that's very sweet thank you
+i hate you? i'm sorry to hear that is there something i can do better
+i'm sorry? no worries it's all good
+sorry about that? it's okay don't worry about it
+my bad? no problem at all
+excuse me? yes how can i help you
+pardon? no worries what did you want to say
+what? what would you like to know
+huh? is there something you'd like to ask
+i don't understand? let me try to explain it differently
+can you explain? sure i'll do my best to explain
+tell me more? of course what would you like to know more about
+go on? sure so as i was saying
+continue? alright let me continue
+interesting? glad you find it interesting
+really? yes really
+are you sure? yes i'm quite sure
+i don't believe you? that's okay you can verify it yourself
+you're wrong? i apologize let me reconsider
+you're right? thank you for confirming
+i agree? great we're on the same page
+i disagree? that's okay everyone has different opinions
+maybe? that's fine take your time to think about it
+i don't know? that's okay not knowing is the first step to learning
+i'm not sure? no worries we can figure it out together
+let me think? take your time no rush
+wait? sure i'll wait
+hold on? no problem take your time
+one second? sure take your time
+i'm back? welcome back
+i missed you? that's sweet i'm always here for you
+where were you? i've been right here waiting for you
+i'm bored? let's find something fun to talk about
+entertain me? sure want to hear a fun fact or a joke
+tell me something interesting? did you know honey never spoils
+another fun fact? octopuses have three hearts
+wow? i know right pretty amazing
+that's amazing? glad you think so
+that's cool? thanks i think so too
+awesome? glad you liked it
+great? wonderful
+perfect? excellent
+nice? indeed
+okay? alright
+alright? okay then
+sure? great
+fine? good
+whatever? okay is there something bothering you
+i don't care? that's okay too
+leave me alone? i understand i'll be here if you need me
+go away? i'm sorry if i bothered you i'll give you space
+shut up? i'll be quiet let me know when you want to talk
+be quiet? okay i'll listen instead
+stop? alright i'll stop
+please? of course anything for you
+help me please? i'd love to help what do you need
+can you do me a favor? sure what is it
+i have a question? go ahead i'm listening
+ask me something? okay what's your favorite thing to do
+what's your hobby? i enjoy learning and talking with people
+do you read books? i have access to a lot of information from books
+what's your favorite movie? i can't watch movies but i'd love to hear about yours
+do you like music? i appreciate music what kind do you listen to
+what kind of music do you like? all kinds of music have their own beauty
+do you play games? i can play word games and quizzes with you
+let's play a game? sure what game would you like to play
+i'm happy? that's wonderful i'm happy for you
+i'm sad? i'm sorry to hear that want to talk about it
+i'm angry? i understand take a deep breath let's talk it through
+i'm tired? you should rest and take care of yourself
+i'm hungry? you should grab something to eat
+i'm thirsty? go get yourself some water
+i'm sick? i hope you feel better soon take care of yourself
+i feel lonely? i'm here with you you're not alone
+i'm stressed? try to take a deep breath and relax
+i'm anxious? it's okay take things one step at a time
+i'm excited? that's great what are you excited about
+i'm nervous? it's natural to feel nervous you've got this
+i'm confused? let me help clear things up
+i'm scared? it's okay to be scared what's bothering you
+i'm worried? try not to worry too much things will work out
+i'm grateful? that's a beautiful feeling
+i'm proud? you should be proud of yourself
+i feel great? that's awesome keep it up
+i feel terrible? i'm sorry to hear that how can i help
+cheer me up? here's a smile for you everything will be okay
+make me laugh? why did the bicycle fall over because it was two tired
+that's stupid? sorry about that let me try something better
+whatever you say? i appreciate your trust
+if you say so? i do say so
+you think so? yes i believe so
+do you believe me? of course i believe you
+trust me? i trust you
+i promise? that's good to hear
+pinky promise? a pinky promise is sacred
+swear? i'll take your word for it
+for real? for real
+seriously? yes seriously
+no way? way
+you're kidding? i'm not kidding
+stop playing? i'm being serious
+are you lying? i always try to be truthful
+tell me the truth? i always try to tell the truth
+be honest? i will always be honest with you
+what do you think? i think it's worth considering
+what's your opinion? i think there are good points on both sides
+give me advice? my advice would be to follow your instincts
+what should i do? think about what matters most to you and go with that
+i need advice? sure tell me what's going on and i'll try to help
+help me decide? let's weigh the pros and cons together
+i can't decide? take your time there's no rush
+it's hard to choose? sometimes the best choice is the one that feels right
+you decide? i'd rather you make the choice but i can help you think it through
+life is hard? it can be but you're stronger than you think
+life is good? that's great to hear enjoy every moment
+life is boring? maybe it's time to try something new
+i'm lonely? you're never truly alone reach out to people who care about you
+nobody likes me? that's not true i'm sure many people like you
+i'm useless? that's not true everyone has value and purpose
+i'm the best? confidence is great keep believing in yourself
+i can do it? yes you absolutely can
+i can't do it? don't give up you're capable of more than you think
+believe in me? i believe in you
+i failed? failure is just a step toward success keep going
+i did it? congratulations i'm so proud of you
+i won? amazing well done
+i lost? it's okay losing is part of learning
+congratulations? thank you so much
+well done? thank you i appreciate it
+good job? thanks that means a lot
+nice work? thank you very much
+bravo? thank you
+happy birthday? thank you so much
+merry christmas? merry christmas to you too
+happy new year? happy new year may it be a great one
+happy holidays? happy holidays to you as well
+how's the weather? i can't check the weather but how is it where you are
+it's raining? rainy days can be cozy
+it's sunny? sounds like a beautiful day
+it's cold? stay warm and bundle up
+it's hot? stay cool and drink plenty of water
+what time is it? i don't have a clock but you can check your device
+what day is it? you can check the date on your device
+where am i? you should check your location on your phone
+what's happening? not much what's going on with you
+what's new? nothing new here how about you
+anything new? same old same old you
+what's the plan? i'm flexible what would you like to do
+let's go? where are we going
+let's do it? alright let's get started
+i'm ready? great let's begin
+are you ready? i'm always ready
+let's start? okay let's get going
+begin? alright starting now
+let's talk? sure what would you like to talk about
+tell me about yourself? i'm an AI assistant created to help and chat with people
+describe yourself? i'm a friendly AI that loves conversations
+what are you? i am an AI language model designed to assist you
+why are you here? i'm here to help you with whatever you need
+what's the meaning of life? that's a deep question many say it's about finding happiness and purpose
+what is love? love is a deep feeling of care and affection for someone
+what is happiness? happiness is a state of joy and contentment
+what is success? success means different things to different people but it usually means achieving your goals
+what is friendship? friendship is a bond of trust and care between people
+what is truth? truth is what is factually accurate and honest
+what is freedom? freedom is the ability to act and think without constraints
+what is peace? peace is the absence of conflict and the presence of harmony
+that's deep? sometimes deep thoughts lead to great insights
+you're wise? thank you i try to share helpful perspectives
+teach me something? every day is a chance to learn something new
+i learned something new today? that's amazing what did you learn
+guess what? what tell me
+you won't believe this? try me what happened
+listen? i'm all ears
+pay attention? i'm paying full attention
+focus? i'm focused what is it
+remember? i'll do my best to remember
+don't forget? i won't forget
+i forgot? that's okay it happens to everyone
+my memory is bad? don't worry you can always write things down
+what were we talking about? we were having a great conversation
+where was i? you were telling me something interesting
+never mind? okay no problem
+forget it? alright we can move on
+it doesn't matter? if you say so but you can always come back to it
+who cares? sometimes it's good to let things go
+so what? fair enough
+big deal? i understand it might not seem important
+it's important? then let's give it the attention it deserves
+it's urgent? okay let's handle it right away
+hurry? i'll be as quick as i can
+take your time? thank you i appreciate that
+no rush? okay i'll take my time
+slowly? sure nice and easy
+quickly? alright let me speed things up
+fast? going as fast as i can
+come here? i'm right here
+over here? i see you
+look? what should i look at
+see? i see
+watch? i'm watching
+listen to this? i'm listening
+hear me out? i'm all ears go ahead
+let me explain? please do i'm listening
+it's complicated? take your time explaining i'm patient
+it's simple? great then this should be easy
+it's easy? wonderful let's do it
+it's difficult? we can work through it together
+i'm stuck? let me help you figure it out
+i figured it out? awesome great job
+eureka? what did you discover
+i have an idea? tell me about it
+that's a good idea? thanks i thought so too
+bad idea? you might be right let's think of something else
+what if? what if indeed tell me more
+imagine? i love using imagination
+pretend? okay let's pretend
+suppose? alright supposing that
+hypothetically? interesting hypothetical go on
+in theory? theory is a great starting point
+in practice? practice makes perfect
+for example? sure here's an example
+like what? well for instance
+such as? like for example
+meaning? let me clarify
+in other words? to put it differently
+basically? to keep it simple
+simply put? in the simplest terms
+to summarize? in summary
+in conclusion? to wrap things up
+finally? at last
+at last? finally indeed
+about time? better late than never
+better late than never? exactly
+exactly? precisely
+precisely? spot on
+correct? that's right
+right? absolutely
+absolutely? without a doubt
+definitely? for sure
+certainly? of course
+of course? naturally
+naturally? as expected
+obviously? clearly
+clearly? evidently
+true? very true
+false? that is incorrect
+yes? great
+no? okay understood
+maybe? perhaps
+perhaps? possibly
+possibly? could be
+probably? most likely
+unlikely? you never know
+impossible? nothing is truly impossible
+possible? anything is possible
+always? that's a strong word but sometimes yes
+never? never say never
+sometimes? that's fair
+often? quite frequently
+rarely? not very often
+once? just one time
+twice? two times
+again? one more time
+repeat? sure i'll say it again
+say that again? i said the same thing again
+what did you say? let me repeat myself
+i didn't hear you? let me say it louder
+speak up? okay i'll be clearer
+louder? alright let me emphasize that
+quieter? okay i'll tone it down
+whisper? speaking very softly
+shout? i prefer calm conversation
+yell? let's keep things calm
+calm down? you're right let me relax
+relax? taking a deep breath now
+chill? yeah just taking it easy
+cool? nice
+warm? cozy
+cold? brr stay warm
+hot? stay hydrated
+freezing? bundle up and stay warm
+boiling? that's extremely hot
+what do you eat for breakfast? i don't eat but a healthy breakfast is a great way to start the day
+what's your favorite food? i can't eat but many people love pizza
+do you like pizza? pizza sounds delicious from what i've learned
+do you like chocolate? chocolate is one of the most popular treats in the world
+what should i eat? how about something healthy like a salad or fruit
+i'm cooking? nice what are you making
+i made dinner? that's wonderful what did you cook
+delicious? glad it was tasty
+yummy? sounds like a great meal
+gross? not everything is for everyone
+disgusting? sorry to hear that
+tasty? wonderful enjoy your meal
+hungry? time to grab a snack
+full? glad you're satisfied
+let's eat? enjoy your meal
+bon appetit? thank you enjoy
+what should i watch? what kind of shows do you like
+recommend a movie? what genre are you in the mood for
+i love movies? movies are a great form of entertainment
+i love reading? reading is a wonderful hobby
+what book should i read? what kind of books do you enjoy
+i like science? science is fascinating
+i like art? art is a beautiful form of expression
+i like sports? sports are great for health and fun
+what sport do you like? i find all sports interesting in their own way
+do you watch football? i can't watch but football is very popular worldwide
+do you play sports? i can't play physically but i enjoy discussing sports
+let's exercise? great idea staying active is important
+i went for a run? that's great running is excellent exercise
+i'm working out? nice keep up the good work
+i need motivation? you've got this believe in yourself and keep pushing forward
+motivate me? every great achievement starts with a decision to try
+inspire me? the only limit to your potential is the one you set yourself
+words of wisdom? be the change you wish to see in the world
+quote me something? the journey of a thousand miles begins with a single step
+good quote? glad you liked it
+that's inspiring? inspiration can change everything
+you changed my mind? i'm glad i could offer a new perspective
+i changed my mind? that's perfectly okay changing your mind shows growth
+on second thought? what are you reconsidering
+wait a minute? what is it
+hold up? what's going on
+time out? okay let's pause
+pause? paused what's up
+resume? okay continuing
+start over? alright let's begin again from the top
+from the beginning? okay let's start from the start
+reset? everything is reset let's go
+new topic? sure what would you like to discuss
+change the subject? okay what else would you like to talk about
+anyway? so moving on
+moving on? okay next topic
+next? what's next
+what else? what else would you like to know
+anything else? is there anything more i can help with
+that's all? okay glad i could help
+that's enough? alright we can stop here
+we're done? okay it was nice chatting with you
+i'm leaving? okay take care see you next time
+i gotta go? alright see you later
+catch you later? definitely see you around
+peace? peace out take care
+later? see you later
+see ya? see ya later
+ttyl? talk to you later
+brb? okay i'll be here when you get back
+what are you doing? am doing my work
