@@ -35,10 +35,10 @@ class UltraGPTChatbot:
 
     def _get_formatted_prompt(self, new_user_message: str, history_slice: list) -> str:
         """Format the system prompt, history slice, and new message into a flat string."""
-        prompt = f"System: {self.system_prompt}\n"
+        prompt = f"<|im_start|>system\n{self.system_prompt}<|im_end|>\n"
         for turn in history_slice:
-            prompt += f"User: {turn['user']}\nAssistant: {turn['assistant']}\n"
-        prompt += f"User: {new_user_message}\nAssistant:"
+            prompt += f"<|im_start|>user\n{turn['user']}<|im_end|>\n<|im_start|>assistant\n{turn['assistant']}<|im_end|>\n"
+        prompt += f"<|im_start|>user\n{new_user_message}<|im_end|>\n<|im_start|>assistant\n"
         return prompt
 
     def _get_token_count(self, text: str) -> int:
@@ -95,8 +95,6 @@ class UltraGPTChatbot:
         prompt, max_new_tokens = self._get_pruned_prompt(user_message, max_new_tokens)
 
         if stream:
-            # We must strip the prompt from the output to only yield new assistant text
-            # Sampler.generate returns prompt + completion. For streaming it yields just tokens.
             generator = self.sampler.generate(
                 prompt=prompt,
                 max_new_tokens=max_new_tokens,
@@ -109,12 +107,28 @@ class UltraGPTChatbot:
             )
             
             full_reply = ""
+            buffer = ""
             for token in generator:
-                full_reply += token
-                yield token
+                buffer += token
+                if "<|im_end|>" in buffer:
+                    idx = buffer.find("<|im_end|>")
+                    yield_chunk = buffer[:idx]
+                    full_reply += yield_chunk
+                    yield yield_chunk
+                    buffer = ""
+                    break
                 
-            # Save completed turn to history
-            self.history.append({"user": user_message, "assistant": full_reply})
+                if len(buffer) > 20:
+                    yield_len = len(buffer) - 15
+                    yield_chunk = buffer[:yield_len]
+                    full_reply += yield_chunk
+                    yield yield_chunk
+                    buffer = buffer[yield_len:]
+            else:
+                full_reply += buffer
+                yield buffer
+                
+            self.history.append({"user": user_message, "assistant": full_reply.strip()})
         else:
             full_response = self.sampler.generate(
                 prompt=prompt,
@@ -126,8 +140,9 @@ class UltraGPTChatbot:
                 stream=False,
                 verbose=False,
             )
-            # Extracted assistant response (remove the prefilled prompt context)
             reply = full_response[len(prompt):].strip()
+            if "<|im_end|>" in reply:
+                reply = reply.split("<|im_end|>")[0].strip()
             self.history.append({"user": user_message, "assistant": reply})
             yield reply
 
