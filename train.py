@@ -82,6 +82,36 @@ class WarmupCosineDecay(tf.keras.optimizers.schedules.LearningRateSchedule):
 
 
 # ═══════════════════════════════════════════════════════════════════════
+# Per-Step Metrics Callback
+# ═══════════════════════════════════════════════════════════════════════
+
+class StepMetricsCallback(tf.keras.callbacks.Callback):
+    """Records per-step metric values for plotting training curves.
+
+    Keras 3 traces train_step as a graph, so float() cannot be called
+    on symbolic tensors inside train_step. This callback receives eager
+    values in on_train_batch_end, making it the correct place to record
+    per-step history.
+
+    Usage:
+        step_metrics = StepMetricsCallback()
+        model.fit(..., callbacks=[step_metrics])
+        # Then plot: step_metrics.history["loss"], etc.
+    """
+
+    def __init__(self):
+        super().__init__()
+        self.history = {"loss": [], "perplexity": [], "accuracy": []}
+
+    def on_train_batch_end(self, batch, logs=None):
+        if logs is None:
+            return
+        self.history["loss"].append(float(logs.get("loss", 0)))
+        self.history["perplexity"].append(float(logs.get("perplexity", 0)))
+        self.history["accuracy"].append(float(logs.get("accuracy", 0)))
+
+
+# ═══════════════════════════════════════════════════════════════════════
 # Training Setup
 # ═══════════════════════════════════════════════════════════════════════
 
@@ -317,7 +347,7 @@ def main():
     )
 
     # ── Save final weights ───────────────────────────────────────────
-    final_path = os.path.join(args.output_dir, "final_weights")
+    final_path = os.path.join(args.output_dir, "final_weights.weights.h5")
     model.save_weights(final_path)
     print(f"\n[Training] Final weights saved to {final_path}")
 

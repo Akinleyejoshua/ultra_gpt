@@ -139,6 +139,9 @@ class UltraGPT(tf.keras.Model):
             name="accuracy"
         )
 
+        # Per-step history for plotting training curves
+        self.step_history = {"loss": [], "perplexity": [], "accuracy": []}
+
     def _get_causal_mask(self, seq_len):
         """Build a lower-triangular causal mask.
 
@@ -246,7 +249,7 @@ class UltraGPT(tf.keras.Model):
 
         self.optimizer.apply_gradients(zip(gradients, self.trainable_variables))
 
-        # Update metrics
+        # Update metric trackers
         self.loss_tracker.update_state(loss)
         self.perplexity_tracker.update_state(loss)
         self.accuracy_tracker.update_state(targets, logits)
