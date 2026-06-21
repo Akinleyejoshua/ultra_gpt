@@ -34,7 +34,12 @@ class ModelServer:
                 n_heads=100,
                 n_kv_heads=20,
                 n_layers=6,
-                block_size=128
+                block_size=128,
+                dropout_rate=0.05,
+                temperature=0.3,
+                top_k=5,
+                top_p=0.85,
+                max_gen_length=128
             )
         }
         if preset not in config_map:
@@ -100,20 +105,31 @@ class ModelServer:
 
     def _build_prompt_string(self, system_message: ChatMessage, messages: List[ChatMessage]) -> str:
         prompt = ""
-        system_suffix = "\nYou must output your step-by-step thinking process wrapped in <thought>...</thought> tags before providing your final answer."
-        if system_message:
-            prompt += f"<|im_start|>system\n{system_message.content}{system_suffix}<|im_end|>\n"
-        else:
-            prompt += f"<|im_start|>system\nYou are a helpful, focused, and concise AI assistant.{system_suffix}<|im_end|>\n"
-            
-        for m in messages:
-            content = m.content or ""
-            if m.role == "assistant" and m.reasoning_content:
-                content_str = f"<thought>\n{m.reasoning_content}\n</thought>\n{content}"
+        if self.preset == "notebook":
+            if system_message:
+                prompt += f"<|im_start|>system\n{system_message.content}<|im_end|>\n"
             else:
-                content_str = content
-            prompt += f"<|im_start|>{m.role}\n{content_str}<|im_end|>\n"
-        prompt += "<|im_start|>assistant\n<thought>\n"
+                prompt += f"<|im_start|>system\nYou are a helpful and concise assistant.<|im_end|>\n"
+                
+            for m in messages:
+                content = m.content or ""
+                prompt += f"<|im_start|>{m.role}\n{content}<|im_end|>\n"
+            prompt += "<|im_start|>assistant\n"
+        else:
+            system_suffix = "\nYou must output your step-by-step thinking process wrapped in <thought>...</thought> tags before providing your final answer."
+            if system_message:
+                prompt += f"<|im_start|>system\n{system_message.content}{system_suffix}<|im_end|>\n"
+            else:
+                prompt += f"<|im_start|>system\nYou are a helpful, focused, and concise AI assistant.{system_suffix}<|im_end|>\n"
+                
+            for m in messages:
+                content = m.content or ""
+                if m.role == "assistant" and m.reasoning_content:
+                    content_str = f"<thought>\n{m.reasoning_content}\n</thought>\n{content}"
+                else:
+                    content_str = content
+                prompt += f"<|im_start|>{m.role}\n{content_str}<|im_end|>\n"
+            prompt += "<|im_start|>assistant\n<thought>\n"
         return prompt
 
     def generate_sync(
