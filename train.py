@@ -101,7 +101,14 @@ class StepMetricsCallback(tf.keras.callbacks.Callback):
 
     def __init__(self):
         super().__init__()
-        self.history = {"loss": [], "perplexity": [], "accuracy": []}
+        self.history = {
+            "loss": [],
+            "perplexity": [],
+            "accuracy": [],
+            "val_loss": [],
+            "val_perplexity": [],
+            "val_accuracy": []
+        }
 
     def on_train_batch_end(self, batch, logs=None):
         if logs is None:
@@ -109,6 +116,14 @@ class StepMetricsCallback(tf.keras.callbacks.Callback):
         self.history["loss"].append(float(logs.get("loss", 0)))
         self.history["perplexity"].append(float(logs.get("perplexity", 0)))
         self.history["accuracy"].append(float(logs.get("accuracy", 0)))
+
+    def on_epoch_end(self, epoch, logs=None):
+        if logs is None:
+            return
+        if "val_loss" in logs:
+            self.history["val_loss"].append(float(logs.get("val_loss", 0)))
+            self.history["val_perplexity"].append(float(logs.get("val_perplexity", 0)))
+            self.history["val_accuracy"].append(float(logs.get("val_accuracy", 0)))
 
 
 # ═══════════════════════════════════════════════════════════════════════
