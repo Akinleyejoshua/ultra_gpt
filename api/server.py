@@ -88,7 +88,8 @@ class ModelServer:
         prompt = self._build_prompt_string(system_message, other_messages)
         tokens = self.tokenizer.encode(prompt)
         if len(tokens) > max_prompt_len:
-            header_tokens = self.tokenizer.encode("<|im_start|>assistant\n<thought>\n")
+            header_str = "<|im_start|>assistant\n" if self.preset == "notebook" else "<|im_start|>assistant\n<thought>\n"
+            header_tokens = self.tokenizer.encode(header_str)
             content_tokens = tokens[:-len(header_tokens)]
             allowed_content_len = max_prompt_len - len(header_tokens)
             content_tokens = content_tokens[-allowed_content_len:]
@@ -152,7 +153,7 @@ class ModelServer:
             verbose=False,
         )
         
-        in_thought = True
+        in_thought = (self.preset != "notebook")
         reasoning_content = ""
         content = ""
         buffer = ""
@@ -245,7 +246,7 @@ class ModelServer:
                 verbose=False,
             )
             
-            in_thought = True
+            in_thought = (self.preset != "notebook")
             buffer = ""
             stop_patterns = ["<|im_start|>", "<|im_end|>", "<|", "|>", "im_start", "im_end"]
             
@@ -301,8 +302,22 @@ class ModelServer:
                             q.put(("thought", buffer))
                             buffer = ""
                 else:
-                    q.put(("content", buffer))
-                    buffer = ""
+                    # Hold back partial matches of stop patterns
+                    match_prefix = False
+                    for pattern in stop_patterns:
+                        for i in range(1, len(pattern)):
+                            if buffer.endswith(pattern[:i]):
+                                match_prefix = True
+                                keep_len = len(buffer) - i
+                                if keep_len > 0:
+                                    q.put(("content", buffer[:keep_len]))
+                                    buffer = buffer[keep_len:]
+                                break
+                        if match_prefix:
+                            break
+                    if not match_prefix:
+                        q.put(("content", buffer))
+                        buffer = ""
             else:
                 if buffer:
                     if in_thought:

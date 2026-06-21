@@ -108,27 +108,54 @@ class UltraGPTChatbot:
                 verbose=False,
             )
             
+            stop_patterns = ["<|im_start|>", "<|im_end|>", "<|", "|>", "im_start", "im_end"]
             full_reply = ""
             buffer = ""
             for token in generator:
                 buffer += token
-                if "<|im_end|>" in buffer:
-                    idx = buffer.find("<|im_end|>")
-                    yield_chunk = buffer[:idx]
-                    full_reply += yield_chunk
-                    yield yield_chunk
+                
+                # Check for stop patterns
+                first_idx = len(buffer)
+                found = False
+                for pattern in stop_patterns:
+                    if pattern in buffer:
+                        idx = buffer.find(pattern)
+                        if idx < first_idx:
+                            first_idx = idx
+                            found = True
+                
+                if found:
+                    yield_chunk = buffer[:first_idx].rstrip("<| \n\t")
+                    if yield_chunk:
+                        full_reply += yield_chunk
+                        yield yield_chunk
                     buffer = ""
                     break
                 
-                if len(buffer) > 20:
-                    yield_len = len(buffer) - 15
-                    yield_chunk = buffer[:yield_len]
-                    full_reply += yield_chunk
-                    yield yield_chunk
-                    buffer = buffer[yield_len:]
+                # Hold back partial matches of stop patterns
+                match_prefix = False
+                for pattern in stop_patterns:
+                    for i in range(1, len(pattern)):
+                        if buffer.endswith(pattern[:i]):
+                            match_prefix = True
+                            keep_len = len(buffer) - i
+                            if keep_len > 0:
+                                yield_chunk = buffer[:keep_len]
+                                full_reply += yield_chunk
+                                yield yield_chunk
+                                buffer = buffer[keep_len:]
+                            break
+                    if match_prefix:
+                        break
+                
+                if not match_prefix:
+                    full_reply += buffer
+                    yield buffer
+                    buffer = ""
             else:
-                full_reply += buffer
-                yield buffer
+                if buffer:
+                    full_reply += buffer
+                    yield buffer
                 
             self.history.append({"user": user_message, "assistant": full_reply.strip()})
         else:
