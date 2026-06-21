@@ -26,7 +26,7 @@ class UltraGPTChatbot:
         self.sampler = sampler
         self.config = sampler.config
         self.tokenizer = sampler.tokenizer
-        self.system_prompt = system_prompt or "You are a helpful, focused, and concise AI assistant."
+        self.system_prompt = system_prompt
         self.history = []  # List of dicts: {"user": str, "assistant": str}
 
     def clear_history(self):
@@ -35,7 +35,9 @@ class UltraGPTChatbot:
 
     def _get_formatted_prompt(self, new_user_message: str, history_slice: list) -> str:
         """Format the system prompt, history slice, and new message into a flat string."""
-        prompt = f"<|im_start|>system\n{self.system_prompt}<|im_end|>\n"
+        prompt = ""
+        if self.system_prompt:
+            prompt += f"<|im_start|>system\n{self.system_prompt}<|im_end|>\n"
         for turn in history_slice:
             prompt += f"<|im_start|>user\n{turn['user']}<|im_end|>\n<|im_start|>assistant\n{turn['assistant']}<|im_end|>\n"
         prompt += f"<|im_start|>user\n{new_user_message}<|im_end|>\n<|im_start|>assistant\n"

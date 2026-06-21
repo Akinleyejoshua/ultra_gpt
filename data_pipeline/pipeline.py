@@ -55,64 +55,123 @@ def create_dataset_from_text(
     shuffle_buffer: int = 10000,
     encoding_name: str = "r50k_base",
     seed: int = 42,
+    val_split: float = 0.1,
 ):
-    """Build a tf.data.Dataset from a raw text file.
-
-    Pipeline:
-      1. Read file → tokenize with tiktoken
-      2. Chunk into non-overlapping windows of (block_size + 1) tokens
-      3. Split each chunk into (input[:-1], target[1:])
-      4. Shuffle → batch → prefetch
+    """Build train and validation tf.data.Datasets from a raw text file with dialogue masking.
 
     Args:
         text_path: Path to the raw .txt file.
-        block_size: Context window size (number of input tokens per sample).
+        block_size: Context window size.
         batch_size: Training batch size.
         shuffle_buffer: Size of the shuffle buffer.
         encoding_name: Tiktoken encoding name.
         seed: Random seed for shuffling.
+        val_split: Fraction of dataset chunks reserved for validation.
 
     Returns:
-        tf.data.Dataset yielding (inputs, targets) batches,
-        each of shape (batch_size, block_size) as int32 tensors.
+        train_dataset: tf.data.Dataset for training.
+        val_dataset: tf.data.Dataset for validation, or None if val_split = 0.0.
+        tokenizer: TiktokenWrapper.
     """
+    import re
     tokenizer = TiktokenWrapper(encoding_name)
 
     # ── Read and tokenize ─────────────────────────────────────────────
     with open(text_path, "r", encoding="utf-8") as f:
         raw_text = f.read()
 
-    all_tokens = tokenizer.encode(raw_text)
-    all_tokens = np.array(all_tokens, dtype=np.int32)
+    has_chatml = "<|im_start|>" in raw_text
 
-    # ── Chunk into windows ────────────────────────────────────────────
-    chunk_size = block_size + 1  # +1 for target shift
-    n_chunks = len(all_tokens) // chunk_size
+    if has_chatml:
+        # Dialogue masking logic
+        pattern = r"(<\|im_start\|>user\n|<\|im_start\|>assistant\n|<\|im_end\|>\n?)"
+        parts = re.split(pattern, raw_text)
+        input_ids = []
+        target_ids = []
+        current_role = None
+        for part in parts:
+            if not part:
+                continue
+            if part == "<|im_start|>user\n":
+                current_role = "user"
+                tokens = tokenizer.encode(part)
+                input_ids.extend(tokens)
+                target_ids.extend([-100] * len(tokens))
+            elif part == "<|im_start|>assistant\n":
+                current_role = "assistant"
+                tokens = tokenizer.encode(part)
+                input_ids.extend(tokens)
+                target_ids.extend([-100] * len(tokens))
+            elif part.startswith("<|im_end|>"):
+                tokens = tokenizer.encode(part)
+                input_ids.extend(tokens)
+                if current_role == "assistant":
+                    target_ids.extend(tokens)
+                else:
+                    target_ids.extend([-100] * len(tokens))
+                current_role = None
+            else:
+                tokens = tokenizer.encode(part)
+                input_ids.extend(tokens)
+                if current_role == "assistant":
+                    target_ids.extend(tokens)
+                else:
+                    target_ids.extend([-100] * len(tokens))
+    else:
+        # Standard causal language modeling targets (copy input)
+        all_tokens = tokenizer.encode(raw_text)
+        input_ids = list(all_tokens)
+        target_ids = list(all_tokens)
+
+    input_ids = np.array(input_ids, dtype=np.int32)
+    target_ids = np.array(target_ids, dtype=np.int32)
+
+    # Shift targets by 1 relative to inputs
+    inputs_all = input_ids[:-1]
+    targets_all = target_ids[1:]
+
+    # Chunk into block_size windows
+    n_chunks = len(inputs_all) // block_size
     # Trim to exact multiple
-    all_tokens = all_tokens[: n_chunks * chunk_size]
-    chunks = all_tokens.reshape(n_chunks, chunk_size)
+    inputs_all = inputs_all[: n_chunks * block_size]
+    targets_all = targets_all[: n_chunks * block_size]
 
-    print(f"[Data Pipeline] Tokenized {len(raw_text):,} chars → "
-          f"{len(all_tokens):,} tokens → {n_chunks:,} chunks of {chunk_size}")
+    inputs_chunks = inputs_all.reshape(n_chunks, block_size)
+    targets_chunks = targets_all.reshape(n_chunks, block_size)
 
-    # ── Build tf.data.Dataset ─────────────────────────────────────────
-    dataset = tf.data.Dataset.from_tensor_slices(chunks)
+    print(f"[Data Pipeline] Dialogue Masking: {has_chatml} | Tokenized {len(raw_text):,} chars → "
+          f"{len(input_ids):,} tokens → {n_chunks:,} chunks of {block_size}")
 
-    # Split into (input, target) pairs
-    def split_input_target(chunk):
-        inputs = chunk[:-1]   # (block_size,)
-        targets = chunk[1:]   # (block_size,)
-        return inputs, targets
+    # Train / Val Split
+    n_val = int(n_chunks * val_split)
+    n_train = n_chunks - n_val
 
-    dataset = (
-        dataset
-        .map(split_input_target, num_parallel_calls=tf.data.AUTOTUNE)
+    train_inputs = inputs_chunks[:n_train]
+    train_targets = targets_chunks[:n_train]
+
+    val_inputs = inputs_chunks[n_train:]
+    val_targets = targets_chunks[n_train:]
+
+    # ── Build tf.data.Datasets ─────────────────────────────────────────
+    train_dataset = tf.data.Dataset.from_tensor_slices((train_inputs, train_targets))
+    train_dataset = (
+        train_dataset
         .shuffle(buffer_size=shuffle_buffer, seed=seed)
         .batch(batch_size, drop_remainder=True)
         .prefetch(tf.data.AUTOTUNE)
     )
 
-    return dataset, tokenizer
+    if n_val > 0:
+        val_dataset = tf.data.Dataset.from_tensor_slices((val_inputs, val_targets))
+        val_dataset = (
+            val_dataset
+            .batch(batch_size, drop_remainder=True)
+            .prefetch(tf.data.AUTOTUNE)
+        )
+    else:
+        val_dataset = None
+
+    return train_dataset, val_dataset, tokenizer
 
 
 def create_dataset_from_generator(

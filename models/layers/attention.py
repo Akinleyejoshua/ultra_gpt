@@ -41,6 +41,7 @@ class GroupedQueryAttention(tf.keras.layers.Layer):
         max_seq_len: int = 8192,
         rope_theta: float = 10000.0,
         dropout_rate: float = 0.0,
+        n_layers: int = 4,
         **kwargs,
     ):
         super().__init__(**kwargs)
@@ -53,38 +54,43 @@ class GroupedQueryAttention(tf.keras.layers.Layer):
         self.max_seq_len = max_seq_len
         self.rope_theta = rope_theta
         self.dropout_rate = dropout_rate
+        self.n_layers = n_layers
 
         assert n_heads % n_kv_heads == 0, (
             f"n_heads ({n_heads}) must be divisible by n_kv_heads ({n_kv_heads})"
         )
 
     def build(self, input_shape):
+        # Scale weight initialization based on hidden size and depth
+        init_std = 1.0 / (self.d_model ** 0.5)
+        residual_init_std = 1.0 / ((2.0 * self.n_layers * self.d_model) ** 0.5)
+
         # Query projection: d_model → n_heads * head_dim
         self.wq = self.add_weight(
             name="wq",
             shape=(self.d_model, self.n_heads * self.head_dim),
-            initializer="glorot_uniform",
+            initializer=tf.keras.initializers.TruncatedNormal(stddev=init_std),
             trainable=True,
         )
         # Key projection: d_model → n_kv_heads * head_dim
         self.wk = self.add_weight(
             name="wk",
             shape=(self.d_model, self.n_kv_heads * self.head_dim),
-            initializer="glorot_uniform",
+            initializer=tf.keras.initializers.TruncatedNormal(stddev=init_std),
             trainable=True,
         )
         # Value projection: d_model → n_kv_heads * head_dim
         self.wv = self.add_weight(
             name="wv",
             shape=(self.d_model, self.n_kv_heads * self.head_dim),
-            initializer="glorot_uniform",
+            initializer=tf.keras.initializers.TruncatedNormal(stddev=init_std),
             trainable=True,
         )
         # Output projection: n_heads * head_dim → d_model
         self.wo = self.add_weight(
             name="wo",
             shape=(self.n_heads * self.head_dim, self.d_model),
-            initializer="glorot_uniform",
+            initializer=tf.keras.initializers.TruncatedNormal(stddev=residual_init_std),
             trainable=True,
         )
 

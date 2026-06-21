@@ -8,7 +8,7 @@ padding token masking and explicit perplexity tracking.
 import tensorflow as tf
 
 
-def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-1):
+def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-100):
     """Compute label-smoothed cross-entropy loss for causal language modeling.
 
     Args:
@@ -16,7 +16,7 @@ def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-1):
         y_pred: Predicted logits, shape (batch, seq_len, vocab_size). Float tensor.
         label_smoothing: Label smoothing factor in [0, 1). 0 = no smoothing.
         ignore_index: Token ID to ignore in loss computation (e.g., padding).
-                      Set to -1 to disable.
+                      Set to None to disable.
 
     Returns:
         Scalar loss value (mean over non-masked tokens).
@@ -24,14 +24,17 @@ def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-1):
     vocab_size = tf.shape(y_pred)[-1]
 
     # Build mask for valid tokens
-    if ignore_index >= 0:
+    if ignore_index is not None:
         mask = tf.cast(tf.not_equal(y_true, ignore_index), tf.float32)
+        # Replace masked tokens (like -100) with 0 to prevent index errors
+        y_true_for_loss = tf.where(y_true == ignore_index, tf.zeros_like(y_true), y_true)
     else:
         mask = tf.ones_like(y_true, dtype=tf.float32)
+        y_true_for_loss = y_true
 
     if label_smoothing > 0.0:
         # Smooth labels: (1 - smoothing) on correct class, smoothing / (V-1) elsewhere
-        y_true_one_hot = tf.one_hot(y_true, depth=vocab_size)
+        y_true_one_hot = tf.one_hot(y_true_for_loss, depth=vocab_size)
         y_true_smooth = y_true_one_hot * (1.0 - label_smoothing) + \
                         (label_smoothing / tf.cast(vocab_size - 1, tf.float32)) * (1.0 - y_true_one_hot)
         # Compute cross-entropy manually
@@ -40,7 +43,7 @@ def causal_lm_loss(y_true, y_pred, label_smoothing=0.0, ignore_index=-1):
     else:
         # Standard sparse cross-entropy
         loss_per_token = tf.nn.sparse_softmax_cross_entropy_with_logits(
-            labels=y_true, logits=y_pred
+            labels=y_true_for_loss, logits=y_pred
         )
 
     # Apply mask and compute mean

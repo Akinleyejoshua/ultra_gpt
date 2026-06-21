@@ -40,6 +40,7 @@ class DecoderBlock(tf.keras.layers.Layer):
             max_seq_len=cfg.block_size,
             rope_theta=cfg.rope_theta,
             dropout_rate=cfg.dropout_rate,
+            n_layers=cfg.n_layers,
             name="gqa",
         )
         self.ffn_norm = RMSNorm(dim=cfg.d_model, eps=cfg.norm_eps, name="ffn_norm")
@@ -47,6 +48,7 @@ class DecoderBlock(tf.keras.layers.Layer):
             d_model=cfg.d_model,
             d_ffn=cfg.d_ffn,
             dropout_rate=cfg.dropout_rate,
+            n_layers=cfg.n_layers,
             name="swiglu",
         )
         super().build(input_shape)
@@ -109,6 +111,9 @@ class UltraGPT(tf.keras.Model):
         self.token_embedding = tf.keras.layers.Embedding(
             input_dim=config.vocab_size,
             output_dim=config.d_model,
+            embeddings_initializer=tf.keras.initializers.TruncatedNormal(
+                stddev=1.0 / (config.d_model ** 0.5)
+            ),
             name="token_embedding",
         )
 
@@ -128,7 +133,9 @@ class UltraGPT(tf.keras.Model):
             self.lm_head_weight = self.add_weight(
                 name="lm_head_weight",
                 shape=(config.d_model, config.vocab_size),
-                initializer="glorot_uniform",
+                initializer=tf.keras.initializers.TruncatedNormal(
+                    stddev=1.0 / (config.d_model ** 0.5)
+                ),
                 trainable=True,
             )
 
@@ -250,9 +257,10 @@ class UltraGPT(tf.keras.Model):
         self.optimizer.apply_gradients(zip(gradients, self.trainable_variables))
 
         # Update metric trackers
+        mask = tf.cast(tf.not_equal(targets, -100), tf.float32)
         self.loss_tracker.update_state(loss)
         self.perplexity_tracker.update_state(loss)
-        self.accuracy_tracker.update_state(targets, logits)
+        self.accuracy_tracker.update_state(targets, logits, sample_weight=mask)
 
         return {
             "loss": self.loss_tracker.result(),
@@ -269,9 +277,10 @@ class UltraGPT(tf.keras.Model):
             y_pred=logits,
             label_smoothing=0.0,  # No smoothing during eval
         )
+        mask = tf.cast(tf.not_equal(targets, -100), tf.float32)
         self.loss_tracker.update_state(loss)
         self.perplexity_tracker.update_state(loss)
-        self.accuracy_tracker.update_state(targets, logits)
+        self.accuracy_tracker.update_state(targets, logits, sample_weight=mask)
         return {
             "loss": self.loss_tracker.result(),
             "perplexity": self.perplexity_tracker.result(),

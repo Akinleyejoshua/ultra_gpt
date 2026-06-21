@@ -201,7 +201,7 @@ def get_callbacks(config: UltraGPTConfig, output_dir: str):
 
 
 def load_data(config: UltraGPTConfig, source: str, **kwargs):
-    """Load training data from the specified source.
+    """Load training and validation data from the specified source.
 
     Args:
         config: UltraGPTConfig instance.
@@ -209,7 +209,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
         **kwargs: Additional arguments for the data loader.
 
     Returns:
-        Tuple of (dataset, tokenizer_or_None).
+        Tuple of (train_dataset, val_dataset, tokenizer).
     """
     if source == "text":
         text_path = kwargs.get("text_path", "data_pipeline/dataset.txt")
@@ -228,7 +228,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
             batch_size=config.batch_size,
             shuffle_buffer=config.shuffle_buffer,
         )
-        return dataset, TiktokenWrapper()
+        return dataset, None, TiktokenWrapper()
 
     elif source == "hf":
         dataset_name = kwargs.get("dataset_name", "openwebtext")
@@ -236,7 +236,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
         text_column = kwargs.get("text_column", "text")
         hf_streaming = kwargs.get("streaming", True)
         max_samples = kwargs.get("max_samples", None)
-        return create_dataset_from_hf(
+        train_ds, tokenizer = create_dataset_from_hf(
             dataset_name=dataset_name,
             block_size=config.block_size,
             batch_size=config.batch_size,
@@ -246,6 +246,7 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
             streaming=hf_streaming,
             max_samples=max_samples,
         )
+        return train_ds, None, tokenizer
 
     else:
         raise ValueError(f"Unknown data source: '{source}'. Use 'text', 'tfrecord', or 'hf'.")
@@ -308,7 +309,7 @@ def main():
         print(f"[Training] Multi-GPU: {strategy.num_replicas_in_sync} replicas")
 
     # ── Load data ────────────────────────────────────────────────────
-    dataset, tokenizer = load_data(
+    train_dataset, val_dataset, tokenizer = load_data(
         config, args.source,
         text_path=args.text_path,
         tfrecord_dir=args.tfrecord_dir,
@@ -321,7 +322,9 @@ def main():
 
     # Distribute dataset if multi-GPU
     if strategy is not None:
-        dataset = strategy.experimental_distribute_dataset(dataset)
+        train_dataset = strategy.experimental_distribute_dataset(train_dataset)
+        if val_dataset is not None:
+            val_dataset = strategy.experimental_distribute_dataset(val_dataset)
 
     # ── Build model ──────────────────────────────────────────────────
     model, optimizer = build_model_and_optimizer(config, strategy)
@@ -356,7 +359,8 @@ def main():
     print(f"{'═' * 60}\n")
 
     model.fit(
-        dataset,
+        train_dataset,
+        validation_data=val_dataset,
         epochs=args.epochs,
         steps_per_epoch=config.max_steps,
         callbacks=callbacks,
