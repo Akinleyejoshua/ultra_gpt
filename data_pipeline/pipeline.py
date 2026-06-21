@@ -241,12 +241,13 @@ def write_tfrecords(
     block_size: int = 512,
     shards: int = 16,
     encoding_name: str = "r50k_base",
+    val_split: float = 0.1,
 ):
     """Pre-tokenize a text file and write to sharded TFRecords.
 
     This is the highest-throughput path for training: tokenization
     happens once offline, and the training loop reads pre-tokenized
-    binary records.
+    binary records. Supports splitting into train and validation sets.
 
     Args:
         text_path: Path to raw .txt file.
@@ -254,8 +255,8 @@ def write_tfrecords(
         block_size: Context window size.
         shards: Number of output shard files.
         encoding_name: Tiktoken encoding name.
+        val_split: Fraction of chunks reserved for validation.
     """
-    os.makedirs(output_dir, exist_ok=True)
     tokenizer = TiktokenWrapper(encoding_name)
 
     with open(text_path, "r", encoding="utf-8") as f:
@@ -273,25 +274,41 @@ def write_tfrecords(
     rng = np.random.default_rng(42)
     rng.shuffle(chunks)
 
-    # Write to sharded TFRecords
-    chunks_per_shard = (n_chunks + shards - 1) // shards
-    for shard_idx in range(shards):
-        shard_path = os.path.join(output_dir, f"train_{shard_idx:05d}.tfrecord")
-        start = shard_idx * chunks_per_shard
-        end = min(start + chunks_per_shard, n_chunks)
-        with tf.io.TFRecordWriter(shard_path) as writer:
-            for i in range(start, end):
-                feature = {
-                    "tokens": tf.train.Feature(
-                        int64_list=tf.train.Int64List(value=chunks[i].tolist())
-                    )
-                }
-                example = tf.train.Example(
-                    features=tf.train.Features(feature=feature)
-                )
-                writer.write(example.SerializeToString())
+    # Split train/val
+    n_val = int(n_chunks * val_split)
+    n_train = n_chunks - n_val
 
-    print(f"[TFRecord] Wrote {n_chunks:,} chunks to {shards} shards in {output_dir}")
+    def _write_shards(subset_chunks, subset_dir, name_prefix):
+        os.makedirs(subset_dir, exist_ok=True)
+        total_chunks = len(subset_chunks)
+        if total_chunks == 0:
+            return
+        chunks_per_shard = (total_chunks + shards - 1) // shards
+        for shard_idx in range(shards):
+            shard_path = os.path.join(subset_dir, f"{name_prefix}_{shard_idx:05d}.tfrecord")
+            start = shard_idx * chunks_per_shard
+            end = min(start + chunks_per_shard, total_chunks)
+            if start >= end:
+                continue
+            with tf.io.TFRecordWriter(shard_path) as writer:
+                for i in range(start, end):
+                    feature = {
+                        "tokens": tf.train.Feature(
+                            int64_list=tf.train.Int64List(value=subset_chunks[i].tolist())
+                        )
+                    }
+                    example = tf.train.Example(
+                        features=tf.train.Features(feature=feature)
+                    )
+                    writer.write(example.SerializeToString())
+
+    if val_split > 0.0 and n_val > 0:
+        _write_shards(chunks[:n_train], os.path.join(output_dir, "train"), "train")
+        _write_shards(chunks[n_train:], os.path.join(output_dir, "val"), "val")
+        print(f"[TFRecord] Wrote {n_train:,} train chunks and {n_val:,} val chunks to separate directories in {output_dir}")
+    else:
+        _write_shards(chunks, output_dir, "train")
+        print(f"[TFRecord] Wrote {n_chunks:,} chunks to {shards} shards in {output_dir}")
 
 
 def create_dataset_from_tfrecords(

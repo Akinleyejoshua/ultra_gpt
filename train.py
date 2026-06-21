@@ -237,13 +237,30 @@ def load_data(config: UltraGPTConfig, source: str, **kwargs):
 
     elif source == "tfrecord":
         tfrecord_dir = kwargs.get("tfrecord_dir", "data_pipeline/tfrecords")
-        dataset = create_dataset_from_tfrecords(
-            tfrecord_dir=tfrecord_dir,
-            block_size=config.block_size,
-            batch_size=config.batch_size,
-            shuffle_buffer=config.shuffle_buffer,
-        )
-        return dataset, None, TiktokenWrapper()
+        train_path = os.path.join(tfrecord_dir, "train")
+        val_path = os.path.join(tfrecord_dir, "val")
+        if os.path.exists(train_path) and os.path.exists(val_path):
+            train_ds = create_dataset_from_tfrecords(
+                tfrecord_dir=train_path,
+                block_size=config.block_size,
+                batch_size=config.batch_size,
+                shuffle_buffer=config.shuffle_buffer,
+            )
+            val_ds = create_dataset_from_tfrecords(
+                tfrecord_dir=val_path,
+                block_size=config.block_size,
+                batch_size=config.batch_size,
+                shuffle_buffer=config.shuffle_buffer,
+            )
+            return train_ds, val_ds, TiktokenWrapper()
+        else:
+            dataset = create_dataset_from_tfrecords(
+                tfrecord_dir=tfrecord_dir,
+                block_size=config.block_size,
+                batch_size=config.batch_size,
+                shuffle_buffer=config.shuffle_buffer,
+            )
+            return dataset, None, TiktokenWrapper()
 
     elif source == "hf":
         dataset_name = kwargs.get("dataset_name", "openwebtext")
