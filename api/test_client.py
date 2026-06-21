@@ -62,7 +62,9 @@ def test_chat_streaming(url="http://127.0.0.1:8000"):
                 try:
                     chunk = json.loads(data_content)
                     delta = chunk["choices"][0]["delta"]
-                    if "content" in delta:
+                    if "reasoning_content" in delta and delta["reasoning_content"]:
+                        print(f"\033[33m{delta['reasoning_content']}\033[0m", end="", flush=True)
+                    elif "content" in delta and delta["content"]:
                         print(delta["content"], end="", flush=True)
                 except Exception as e:
                     pass

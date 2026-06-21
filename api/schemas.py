@@ -3,7 +3,8 @@ from typing import List, Optional, Union, Dict
 
 class ChatMessage(BaseModel):
     role: str
-    content: str
+    content: Optional[str] = None
+    reasoning_content: Optional[str] = None
 
 class ChatCompletionRequest(BaseModel):
     model: str
@@ -40,6 +41,7 @@ class ChatCompletionResponse(BaseModel):
 class ChatCompletionResponseStreamDelta(BaseModel):
     role: Optional[str] = None
     content: Optional[str] = None
+    reasoning_content: Optional[str] = None
 
 class ChatCompletionResponseStreamChoice(BaseModel):
     index: int

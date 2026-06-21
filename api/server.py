@@ -83,7 +83,7 @@ class ModelServer:
         prompt = self._build_prompt_string(system_message, other_messages)
         tokens = self.tokenizer.encode(prompt)
         if len(tokens) > max_prompt_len:
-            header_tokens = self.tokenizer.encode("<|im_start|>assistant\n")
+            header_tokens = self.tokenizer.encode("<|im_start|>assistant\n<thought>\n")
             content_tokens = tokens[:-len(header_tokens)]
             allowed_content_len = max_prompt_len - len(header_tokens)
             content_tokens = content_tokens[-allowed_content_len:]
@@ -100,14 +100,20 @@ class ModelServer:
 
     def _build_prompt_string(self, system_message: ChatMessage, messages: List[ChatMessage]) -> str:
         prompt = ""
+        system_suffix = "\nYou must output your step-by-step thinking process wrapped in <thought>...</thought> tags before providing your final answer."
         if system_message:
-            prompt += f"<|im_start|>system\n{system_message.content}<|im_end|>\n"
+            prompt += f"<|im_start|>system\n{system_message.content}{system_suffix}<|im_end|>\n"
         else:
-            prompt += "<|im_start|>system\nYou are a helpful, focused, and concise AI assistant.<|im_end|>\n"
+            prompt += f"<|im_start|>system\nYou are a helpful, focused, and concise AI assistant.{system_suffix}<|im_end|>\n"
             
         for m in messages:
-            prompt += f"<|im_start|>{m.role}\n{m.content}<|im_end|>\n"
-        prompt += "<|im_start|>assistant\n"
+            content = m.content or ""
+            if m.role == "assistant" and m.reasoning_content:
+                content_str = f"<thought>\n{m.reasoning_content}\n</thought>\n{content}"
+            else:
+                content_str = content
+            prompt += f"<|im_start|>{m.role}\n{content_str}<|im_end|>\n"
+        prompt += "<|im_start|>assistant\n<thought>\n"
         return prompt
 
     def generate_sync(
@@ -117,8 +123,8 @@ class ModelServer:
         temperature: float,
         top_k: int,
         top_p: float
-    ) -> str:
-        """Synchronously generate response (intended to run under thread executor)."""
+    ) -> Tuple[str, str]:
+        """Synchronously generate response returning (reasoning_content, content)."""
         generator = self.sampler.generate(
             prompt=prompt,
             max_new_tokens=max_new_tokens,
@@ -130,9 +136,12 @@ class ModelServer:
             verbose=False,
         )
         
-        full_reply = ""
+        in_thought = True
+        reasoning_content = ""
+        content = ""
         buffer = ""
         stop_patterns = ["<|im_start|>", "<|im_end|>", "<|", "|>", "im_start", "im_end"]
+        
         for token in generator:
             buffer += token
             
@@ -147,17 +156,56 @@ class ModelServer:
                         found = True
             if found:
                 final_chunk = buffer[:first_idx].rstrip("<| \n\t")
-                full_reply += final_chunk
+                if final_chunk:
+                    if in_thought:
+                        if "</thought>" in final_chunk:
+                            parts = final_chunk.split("</thought>", 1)
+                            reasoning_content += parts[0]
+                            content += parts[1]
+                        else:
+                            reasoning_content += final_chunk
+                    else:
+                        content += final_chunk
                 break
             
-            if len(buffer) > 20:
-                yield_len = len(buffer) - 15
-                full_reply += buffer[:yield_len]
-                buffer = buffer[yield_len:]
+            # Process buffer in normal flow
+            if in_thought:
+                if "</thought>" in buffer:
+                    parts = buffer.split("</thought>", 1)
+                    reasoning_content += parts[0]
+                    in_thought = False
+                    buffer = parts[1]
+                else:
+                    # hold back prefix match
+                    match_prefix = False
+                    tag = "</thought>"
+                    for i in range(1, len(tag)):
+                        if buffer.endswith(tag[:i]):
+                            match_prefix = True
+                            keep_len = len(buffer) - i
+                            if keep_len > 0:
+                                reasoning_content += buffer[:keep_len]
+                                buffer = buffer[keep_len:]
+                            break
+                    if not match_prefix:
+                        reasoning_content += buffer
+                        buffer = ""
+            else:
+                content += buffer
+                buffer = ""
         else:
-            full_reply += buffer
-            
-        return full_reply.strip()
+            if buffer:
+                if in_thought:
+                    if "</thought>" in buffer:
+                        parts = buffer.split("</thought>", 1)
+                        reasoning_content += parts[0]
+                        content += parts[1]
+                    else:
+                        reasoning_content += buffer
+                else:
+                    content += buffer
+                    
+        return reasoning_content.strip(), content.strip()
 
     def generate_stream(
         self,
@@ -168,7 +216,7 @@ class ModelServer:
         top_p: float,
         q: queue.Queue
     ):
-        """Streams generated tokens to a thread-safe queue."""
+        """Streams generated tokens as (type, token) tuples to a thread-safe queue."""
         try:
             generator = self.sampler.generate(
                 prompt=prompt,
@@ -181,8 +229,10 @@ class ModelServer:
                 verbose=False,
             )
             
+            in_thought = True
             buffer = ""
             stop_patterns = ["<|im_start|>", "<|im_end|>", "<|", "|>", "im_start", "im_end"]
+            
             for token in generator:
                 buffer += token
                 
@@ -197,15 +247,59 @@ class ModelServer:
                             found = True
                 if found:
                     final_chunk = buffer[:first_idx].rstrip("<| \n\t")
-                    q.put(final_chunk)
+                    if final_chunk:
+                        if in_thought:
+                            if "</thought>" in final_chunk:
+                                parts = final_chunk.split("</thought>", 1)
+                                if parts[0]:
+                                    q.put(("thought", parts[0]))
+                                if parts[1]:
+                                    q.put(("content", parts[1]))
+                            else:
+                                q.put(("thought", final_chunk))
+                        else:
+                            q.put(("content", final_chunk))
                     break
                 
-                if len(buffer) > 20:
-                    yield_len = len(buffer) - 15
-                    q.put(buffer[:yield_len])
-                    buffer = buffer[yield_len:]
+                # Process buffer in normal flow
+                if in_thought:
+                    if "</thought>" in buffer:
+                        parts = buffer.split("</thought>", 1)
+                        thought_part = parts[0]
+                        if thought_part:
+                            q.put(("thought", thought_part))
+                        in_thought = False
+                        buffer = parts[1]
+                    else:
+                        match_prefix = False
+                        tag = "</thought>"
+                        for i in range(1, len(tag)):
+                            if buffer.endswith(tag[:i]):
+                                match_prefix = True
+                                keep_len = len(buffer) - i
+                                if keep_len > 0:
+                                    q.put(("thought", buffer[:keep_len]))
+                                    buffer = buffer[keep_len:]
+                                break
+                        if not match_prefix:
+                            q.put(("thought", buffer))
+                            buffer = ""
+                else:
+                    q.put(("content", buffer))
+                    buffer = ""
             else:
-                q.put(buffer)
+                if buffer:
+                    if in_thought:
+                        if "</thought>" in buffer:
+                            parts = buffer.split("</thought>", 1)
+                            if parts[0]:
+                                q.put(("thought", parts[0]))
+                            if parts[1]:
+                                q.put(("content", parts[1]))
+                        else:
+                            q.put(("thought", buffer))
+                    else:
+                        q.put(("content", buffer))
         except Exception as e:
             q.put(e)
         finally:

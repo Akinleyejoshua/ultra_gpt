@@ -119,7 +119,7 @@ async def chat_completions(req: ChatCompletionRequest):
                     "choices": [
                         {
                             "index": 0,
-                            "delta": {"role": "assistant", "content": ""},
+                            "delta": {"role": "assistant"},
                             "finish_reason": None
                         }
                     ]
@@ -156,21 +156,29 @@ async def chat_completions(req: ChatCompletionRequest):
                         traceback.print_exception(type(item), item, item.__traceback__, file=sys.stderr)
                         break
                     
-                    if item:
-                        chunk = {
-                            "id": chat_id,
-                            "object": "chat.completion.chunk",
-                            "created": created_time,
-                            "model": req.model,
-                            "choices": [
-                                {
-                                    "index": 0,
-                                    "delta": {"content": item},
-                                    "finish_reason": None
-                                }
-                            ]
-                        }
-                        yield f"data: {json.dumps(chunk)}\n\n"
+                    if isinstance(item, tuple) and len(item) == 2:
+                        chunk_type, text_content = item
+                        if text_content:
+                            delta = {}
+                            if chunk_type == "thought":
+                                delta["reasoning_content"] = text_content
+                            else:
+                                delta["content"] = text_content
+                                
+                            chunk = {
+                                "id": chat_id,
+                                "object": "chat.completion.chunk",
+                                "created": created_time,
+                                "model": req.model,
+                                "choices": [
+                                    {
+                                        "index": 0,
+                                        "delta": delta,
+                                        "finish_reason": None
+                                    }
+                                ]
+                            }
+                            yield f"data: {json.dumps(chunk)}\n\n"
                         
                 yield "data: [DONE]\n\n"
                 
@@ -179,7 +187,7 @@ async def chat_completions(req: ChatCompletionRequest):
     else:
         # Standard non-streaming POST request
         async with model_server.lock:
-            response_text = await asyncio.to_thread(
+            reasoning_text, response_text = await asyncio.to_thread(
                 model_server.generate_sync,
                 prompt,
                 actual_max_tokens,
@@ -189,11 +197,12 @@ async def chat_completions(req: ChatCompletionRequest):
             )
             
         prompt_tokens = len(model_server.tokenizer.encode(prompt))
-        completion_tokens = len(model_server.tokenizer.encode(response_text))
+        full_generation_text = f"<thought>\n{reasoning_text}\n</thought>\n{response_text}"
+        completion_tokens = len(model_server.tokenizer.encode(full_generation_text))
         
         choice = ChatCompletionResponseChoice(
             index=0,
-            message=ChatMessage(role="assistant", content=response_text),
+            message=ChatMessage(role="assistant", content=response_text, reasoning_content=reasoning_text),
             finish_reason="stop"
         )
         
