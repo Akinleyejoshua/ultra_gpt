@@ -26,7 +26,7 @@ class SwiGLU(tf.keras.layers.Layer):
     """
 
     def __init__(self, d_model: int, d_ffn: int = None,
-                 dropout_rate: float = 0.0, **kwargs):
+                 dropout_rate: float = 0.0, n_layers: int = 4, **kwargs):
         super().__init__(**kwargs)
         self.d_model = d_model
         if d_ffn is None:
@@ -34,6 +34,7 @@ class SwiGLU(tf.keras.layers.Layer):
             d_ffn = ((raw + 255) // 256) * 256
         self.d_ffn = d_ffn
         self.dropout_rate = dropout_rate
+        self.n_layers = n_layers
 
     def build(self, input_shape):
         # Gate projection: d_model → d_ffn (goes through swish)
