@@ -8,8 +8,8 @@ class ChatMessage(BaseModel):
 class ChatCompletionRequest(BaseModel):
     model: str
     messages: List[ChatMessage]
-    temperature: Optional[float] = 1.0
-    top_p: Optional[float] = 1.0
+    temperature: Optional[float] = None
+    top_p: Optional[float] = None
     top_k: Optional[int] = None
     n: Optional[int] = 1
     stream: Optional[bool] = False
@@ -66,8 +66,8 @@ class ModelListResponse(BaseModel):
 class CompletionRequest(BaseModel):
     model: str
     prompt: Union[str, List[str]]
-    temperature: Optional[float] = 1.0
-    top_p: Optional[float] = 1.0
+    temperature: Optional[float] = None
+    top_p: Optional[float] = None
     top_k: Optional[int] = None
     stream: Optional[bool] = False
     max_tokens: Optional[int] = 16

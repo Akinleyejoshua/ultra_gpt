@@ -146,7 +146,8 @@ class ModelServer:
                         first_idx = idx
                         found = True
             if found:
-                full_reply += buffer[:first_idx]
+                final_chunk = buffer[:first_idx].rstrip("<| \n\t")
+                full_reply += final_chunk
                 break
             
             if len(buffer) > 20:
@@ -195,7 +196,8 @@ class ModelServer:
                             first_idx = idx
                             found = True
                 if found:
-                    q.put(buffer[:first_idx])
+                    final_chunk = buffer[:first_idx].rstrip("<| \n\t")
+                    q.put(final_chunk)
                     break
                 
                 if len(buffer) > 20:
