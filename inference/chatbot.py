@@ -87,9 +87,9 @@ class UltraGPTChatbot:
         self,
         user_message: str,
         max_new_tokens: int = 150,
-        temperature: float = 0.7,
-        top_k: int = 40,
-        top_p: float = 0.9,
+        temperature: float = 0.10,
+        top_k: int = 0,
+        top_p: float = 0.10,
         mode: str = "sample",
         stream: bool = True,
     ):

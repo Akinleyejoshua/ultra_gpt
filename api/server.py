@@ -36,9 +36,9 @@ class ModelServer:
                 n_layers=6,
                 block_size=128,
                 dropout_rate=0.05,
-                temperature=0.3,
-                top_k=5,
-                top_p=0.85,
+                temperature=0.10,
+                top_k=0,
+                top_p=0.10,
                 max_gen_length=128
             )
         }
